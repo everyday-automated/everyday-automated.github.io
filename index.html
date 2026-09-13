@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Everyday Automated — automations, data tools and AI systems for work and life." />
+  <title>Everyday Automated</title>
+  <style>
+    :root{
+      --bg:#0b0d12;--surface:#131720;--surface2:#171c27;--text:#f7f8fb;
+      --muted:#99a3b3;--line:rgba(255,255,255,.09);--accent:#8bffcf;--max:1120px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+    a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(11,13,18,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:66px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;letter-spacing:-.035em}.brand span{color:var(--accent)}
+    nav{display:flex;gap:24px}nav a{font-size:14px;color:var(--muted)}nav a:hover{color:var(--text)}
+    .hero{padding:96px 0 78px}.hero-inner{max-width:850px}.eyebrow,.label{font-size:12px;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.13em}
+    .eyebrow{margin-bottom:18px}h1{font-size:clamp(52px,8vw,92px);line-height:.96;letter-spacing:-.065em;margin:0 0 24px}.hero p{max-width:660px;color:var(--muted);font-size:19px;line-height:1.55;margin:0 0 30px}
+    .buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border:1px solid var(--line);border-radius:11px;font-weight:750;font-size:13px;transition:.18s ease}.btn:hover{border-color:rgba(255,255,255,.22);transform:translateY(-1px)}.primary{background:var(--accent);color:#07100c;border-color:var(--accent)}
+    section{padding:68px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.label{margin-bottom:9px}h2{font-size:clamp(32px,5vw,50px);letter-spacing:-.045em;margin:0}.section-head p{max-width:450px;color:var(--muted);margin:0;line-height:1.5}
+
+    .capabilities{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.capability{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;min-height:210px}.capability h3{font-size:19px;letter-spacing:-.025em;margin:0 0 10px}.capability p{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 16px}.mini{display:grid;gap:7px}.mini span{font-size:12px;color:#d2d7df}.mini span::before{content:"→";color:var(--accent);margin-right:7px}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.project-card{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:18px;display:flex;flex-direction:column;min-height:310px;overflow:hidden}.project-card:hover{border-color:rgba(139,255,207,.25)}.project-category{font-size:11px;text-transform:uppercase;letter-spacing:.11em;color:var(--accent);font-weight:800;margin-bottom:14px}.project-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.project-card h3{font-size:25px;letter-spacing:-.035em;margin:0}.state{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);border:1px solid rgba(139,255,207,.25);border-radius:999px;padding:5px 7px}.project-copy{font-size:14px;color:var(--muted);line-height:1.55;margin:14px 0 16px}.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}.stack span{border:1px solid var(--line);border-radius:999px;padding:5px 7px;font-size:10px;color:#c8cfda}.project-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.btn.disabled{opacity:.4;pointer-events:none}.view-project{cursor:pointer;background:transparent;color:var(--text)}
+    .project-preview{margin:-2px -2px 18px;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;background:#090d14}.browser-bar{height:31px;display:flex;align-items:center;gap:6px;padding:0 11px;border-bottom:1px solid rgba(255,255,255,.07);background:#111620}.browser-dot{width:7px;height:7px;border-radius:50%;background:#4d5564}.browser-url{margin-left:6px;font-size:9px;color:#6f7888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.seismic-ui{position:relative;height:190px;overflow:hidden;background:radial-gradient(circle at 65% 45%,rgba(255,98,52,.08),transparent 29%),linear-gradient(180deg,#0c1119,#080c12)}.seismic-map{position:absolute;inset:0;width:100%;height:100%}.seismic-island{fill:#26303c;stroke:#596575;stroke-width:1.1}.quake{fill:#ff6a3d;stroke:#ffb091;stroke-width:1.4}.quake.latest{fill:#ff3d27;stroke:#ffd0c3}.quake-ring{fill:none;stroke:#ff5b35;stroke-width:1.2;opacity:.34}.preview-metrics{position:absolute;left:11px;top:12px;display:grid;gap:6px}.metric{width:86px;padding:7px 8px;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(12,17,25,.86);backdrop-filter:blur(6px)}.metric span{display:block;font-size:7px;text-transform:uppercase;letter-spacing:.12em;color:#6f7888}.metric strong{display:block;margin-top:2px;font-size:12px;color:#f2f5f8}.preview-label{position:absolute;right:10px;top:10px;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:#9ca7b6;background:rgba(12,17,25,.74);border:1px solid rgba(255,255,255,.08);padding:5px 7px;border-radius:999px}.preview-wave{position:absolute;right:41px;bottom:35px;width:28px;height:28px;border:1px solid rgba(255,83,52,.34);border-radius:50%;box-shadow:0 0 0 12px rgba(255,83,52,.07),0 0 0 25px rgba(255,83,52,.03)}.architecture-line{margin:2px 0 16px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02);font-size:11px;color:#c8cfda;line-height:1.45}.architecture-line strong{color:var(--text)}
+    .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,6,10,.78);backdrop-filter:blur(8px)}.modal.open{display:flex}.modal-card{width:min(820px,100%);max-height:86vh;overflow:auto;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:26px}.modal-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.modal-head h3{font-size:30px;letter-spacing:-.04em;margin:4px 0 0}.close{border:1px solid var(--line);background:transparent;color:var(--text);width:38px;height:38px;border-radius:10px;font-size:20px;cursor:pointer}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}.detail-block{border-top:1px solid var(--line);padding-top:16px}.detail-block h4{font-size:13px;margin:0 0 10px}.detail-block p,.detail-block li{font-size:13px;color:var(--muted);line-height:1.55}.detail-block ul{margin:0;padding-left:18px;display:grid;gap:6px}.checks{display:grid;gap:10px}.check{font-size:13px;color:var(--muted);line-height:1.45}.check::before{content:"✓";color:var(--accent);font-weight:900;margin-right:8px}
+
+    .custom{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.custom p{font-size:18px;color:var(--muted);line-height:1.6;margin:5px 0 0}.tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tech span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:12px;color:var(--muted)}
+    .contact{display:flex;align-items:center;justify-content:space-between;gap:28px}.contact p{color:var(--muted);margin:9px 0 0}footer{padding:26px 0;color:var(--muted);font-size:13px}.footer{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:1000px){.capabilities{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:1fr}}
+    @media(max-width:680px){.seismic-ui{height:175px}nav{display:none}.hero{padding:74px 0 58px}.section-head,.contact{align-items:flex-start;flex-direction:column}.capabilities,.custom{grid-template-columns:1fr}.custom{gap:22px}.footer{flex-direction:column;gap:5px}.project-card h3{font-size:23px}.detail-grid{grid-template-columns:1fr}.modal{padding:12px}.modal-card{padding:20px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">Everyday <span>Automated</span></a>
+    <nav>
+      <a href="#what">What we do</a>
+      <a href="#projects">Projects</a>
+      <a href="#custom">Custom</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Automation · Data · AI</div>
+      <h1>Automations for<br>work and life.</h1>
+      <p>We build practical automations, data systems and AI-powered tools that remove repetitive work and connect the systems you already use.</p>
+      <div class="buttons"><a class="btn primary" href="#what">What we do</a><a class="btn" href="#projects">See projects</a></div>
+    </div>
+  </section>
+
+  <section id="what">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="label">What we do</div><h2>Systems that do the boring part.</h2></div>
+        <p>From simple automations to AI assistants and data applications — the technology depends on the problem.</p>
+      </div>
+
+      <div class="capabilities">
+        <article class="capability">
+          <h3>Automation</h3>
+          <p>Automate repetitive operational work and event-driven workflows.</p>
+          <div class="mini"><span>File & folder monitoring</span><span>Reports & scheduled jobs</span><span>Backups & processing</span></div>
+        </article>
+        <article class="capability">
+          <h3>Data & Dashboards</h3>
+          <p>Turn raw data into useful monitoring, analysis and reporting tools.</p>
+          <div class="mini"><span>Interactive dashboards</span><span>Data validation & pipelines</span><span>SQL / API analytics</span></div>
+        </article>
+        <article class="capability">
+          <h3>AI, LLM & RAG</h3>
+          <p>Use language models where they actually improve the workflow.</p>
+          <div class="mini"><span>RAG assistants</span><span>Document extraction</span><span>Semantic search</span></div>
+        </article>
+        <article class="capability">
+          <h3>MCP & Agents</h3>
+          <p>Connect AI assistants with tools, data and controlled actions.</p>
+          <div class="mini"><span>MCP servers</span><span>Tool-using agents</span><span>Multi-step workflows</span></div>
+        </article>
+        <article class="capability">
+          <h3>Integrations</h3>
+          <p>Make services and internal systems work together automatically.</p>
+          <div class="mini"><span>APIs & webhooks</span><span>Google Drive</span><span>n8n / Power Automate</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="label">Selected projects</div><h2>Examples in action.</h2></div>
+        <p>Finished projects showing how the broader capabilities above look in a real system.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-preview" aria-label="Browser-style preview of the Canary Seismic Monitor interface">
+            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">canary-seismic-monitor-production.up.railway.app</span></div>
+            <div class="seismic-ui">
+              <div class="preview-metrics"><div class="metric"><span>Events</span><strong>Live</strong></div><div class="metric"><span>Source</span><strong>IGN</strong></div></div>
+              <div class="preview-label">Interface preview</div>
+              <svg class="seismic-map" viewBox="0 0 560 190" role="img" aria-label="Stylized Canary Islands seismic map">
+                <path class="seismic-island" d="M180 91c16-8 35-6 46 1 8 5 8 13-3 18-15 7-37 7-49 1-8-4-7-14 6-20z"/>
+                <path class="seismic-island" d="M245 83c10-6 24-5 32 0 7 5 6 12-2 16-9 5-25 5-33 0-7-4-6-12 3-16z"/>
+                <path class="seismic-island" d="M305 78c9-8 25-10 36-5 8 4 9 12 1 19-9 8-27 11-38 5-8-4-8-12 1-19z"/>
+                <path class="seismic-island" d="M362 82c18-9 43-8 56 1 9 7 8 17-4 24-17 10-45 10-59 1-10-7-8-18 7-26z"/>
+                <path class="seismic-island" d="M431 70c10-5 25-3 31 3 5 5 2 12-7 16-11 5-26 3-32-3-5-5-1-12 8-16z"/>
+                <path class="seismic-island" d="M476 58c9-4 21-2 26 3 4 4 1 10-7 13-9 4-21 2-25-3-4-4-1-10 6-13z"/>
+                <path class="seismic-island" d="M513 49c7-3 16-2 20 2 3 3 1 7-5 10-7 3-16 2-19-2-3-3-1-7 4-10z"/>
+                <circle class="quake" cx="390" cy="91" r="4"/><circle class="quake" cx="325" cy="84" r="3"/><circle class="quake" cx="268" cy="90" r="2.7"/><circle class="quake latest" cx="412" cy="77" r="5"/><circle class="quake-ring" cx="412" cy="77" r="13"/><circle class="quake-ring" cx="412" cy="77" r="23"/>
+              </svg>
+              <div class="preview-wave" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="project-category">Data Automation · Interactive Dashboard</div>
+          <div class="project-title-row"><h3>Canary Seismic Monitor</h3><span class="state">Finished</span></div>
+          <p class="project-copy">An automated seismic monitoring dashboard using official IGN earthquake data. It combines scheduled data ingestion, CSV history, geographic classification and interactive Plotly visualizations.</p>
+          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>Pandas</span><span>CSV</span><span>Watchdog</span><span>Docker</span><span>Railway</span><span>Pytest</span></div>
+          <div class="project-actions">
+            <a class="btn primary" href="https://canary-seismic-monitor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a>
+            <a class="btn" href="https://github.com/everyday-automated/canary-seismic-monitor-demo" target="_blank" rel="noopener noreferrer">View Public Code ↗</a>
+            <button class="btn view-project" data-modal="canary-modal">How it works</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-category">Data Automation · Reporting Dashboard</div>
+          <div class="project-title-row"><h3>Canarias Tourism Pulse</h3><span class="state">Finished</span></div>
+          <p class="project-copy">Automated tourism dashboard and Excel reporting powered by official ISTAC API data.</p>
+          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Railway</span></div>
+          <div class="project-actions">
+            <span class="btn primary disabled" aria-disabled="true">Live Demo</span>
+            <span class="btn disabled" aria-disabled="true">GitHub</span>
+            <button class="btn view-project" data-modal="tourism-modal">View Project</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="custom">
+    <div class="wrap custom">
+      <div><div class="label">Custom Automations</div><h2>Your workflow, automated.</h2></div>
+      <div>
+        <p>We choose the simplest useful architecture for the job — scripts, APIs, dashboards, AI, or a combination of them.</p>
+        <div class="tech"><span>Python</span><span>FastAPI</span><span>n8n</span><span>Power Automate</span><span>Dash</span><span>LLMs</span><span>RAG</span><span>MCP</span><span>APIs</span><span>Databricks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div><div class="label">Contact</div><h2>Everyday Automated</h2><p>Automations for work and life.</p></div>
+    </div>
+  </section>
+
+  <div class="modal" id="canary-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="canary-title">
+      <div class="modal-head">
+        <div><div class="project-category">Finished · Data Automation · Interactive Dashboard</div><h3 id="canary-title">Canary Seismic Monitor</h3></div>
+        <button class="close" data-close aria-label="Close">×</button>
+      </div>
+      <p class="project-copy">Canary Seismic Monitor automatically collects earthquake data from Spain’s Instituto Geográfico Nacional, processes and classifies events by island, stores historical records in CSV, and presents the results through an interactive Dash dashboard.</p>
+      <div class="architecture-line"><strong>Architecture:</strong> IGN Feed → Scheduled Python Ingestion → CSV History → Watchdog → Dash Dashboard</div>
+      <div class="detail-grid">
+        <div class="detail-block">
+          <h4>How it works</h4>
+          <ul><li>The application downloads current earthquake events from the official IGN feed.</li><li>Events are cleaned, deduplicated and assigned to the nearest Canary Island.</li><li>Historical records are stored in CSV on a persistent Railway volume.</li><li>Watchdog detects data-file changes and reloads the in-memory dataset.</li><li>Dash and Plotly present the map, filters, indicators and historical analysis.</li></ul>
+        </div>
+        <div class="detail-block">
+          <h4>Application features</h4>
+          <ul><li>Activity map and island filtering</li><li>Earthquake history, magnitude and depth analysis</li><li>Safe empty states when an island has no matching events</li><li>Automatic data updates and persistent history</li><li>Dockerized Railway deployment with automated tests</li></ul>
+        </div>
+        <div class="detail-block">
+          <h4>What it demonstrates</h4>
+          <div class="checks"><div class="check">Real external API/feed integration</div><div class="check">Scheduled data automation</div><div class="check">CSV-based historical storage</div><div class="check">Geographic data processing</div><div class="check">Interactive analytical dashboards</div><div class="check">Defensive handling of missing data</div><div class="check">Automated testing and cloud deployment</div></div>
+        </div>
+        <div class="detail-block">
+          <h4>Production vs public demo</h4>
+          <p>The Railway application is the live production dashboard and retrieves current IGN data automatically. The public GitHub repository is a portfolio-safe demo that uses a fixed snapshot of real IGN data; it does not expose the private production ingestion system.</p>
+          <div class="project-actions"><a class="btn primary" href="https://canary-seismic-monitor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a><a class="btn" href="https://github.com/everyday-automated/canary-seismic-monitor-demo" target="_blank" rel="noopener noreferrer">Public Demo Code ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="tourism-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="tourism-title">
+      <div class="modal-head">
+        <div><div class="project-category">Finished · Data Automation · Reporting</div><h3 id="tourism-title">Canarias Tourism Pulse</h3></div>
+        <button class="close" data-close aria-label="Close">×</button>
+      </div>
+      <p class="project-copy">An automated dashboard analysing official Canary Islands tourism data from the ISTAC API. It turns public or company data into an automatically updated web dashboard and an exportable Excel report.</p>
+      <div class="detail-grid">
+        <div class="detail-block">
+          <h4>Features</h4>
+          <ul><li>Responsive Dash dashboard with seven thematic tabs</li><li>Airport passengers, ferries, cruise traffic and tourists by island</li><li>Accommodation occupancy and availability</li><li>Tourism spending, KPI and automatic charts</li><li>Current Excel report generated directly from the web app</li><li>Background ISTAC data refresh with last-known-good fallback</li></ul>
+        </div>
+        <div class="detail-block">
+          <h4>Architecture</h4>
+          <p>One lightweight service: Python, Dash, Plotly, OpenPyXL, Gunicorn, JSON snapshot, background job and Railway. No database and no separate FastAPI backend.</p>
+        </div>
+        <div class="detail-block">
+          <h4>What it can mean for a business</h4>
+          <ul><li>Automate data collection from APIs</li><li>Replace manually updated Excel files</li><li>Build an internal or public dashboard</li><li>Generate Excel reports automatically</li><li>Monitor data quality and preserve working snapshots</li><li>Publish the tool as a private or public web app</li></ul>
+        </div>
+        <div class="detail-block">
+          <h4>Technology</h4>
+          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Gunicorn</span><span>JSON</span><span>Background Job</span><span>Railway</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer><div class="wrap footer"><span>© <span id="year"></span> Everyday Automated</span><span>Automation · Data · AI</span></div></footer>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const openModal = id => { const modal=document.getElementById(id); if(!modal) return; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); };
+  const closeModal = modal => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
+  document.querySelectorAll('[data-modal]').forEach(btn=>btn.addEventListener('click',()=>openModal(btn.dataset.modal)));
+  document.querySelectorAll('[data-close]').forEach(btn=>btn.addEventListener('click',()=>closeModal(btn.closest('.modal'))));
+  document.querySelectorAll('.modal').forEach(modal=>modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(modal); }));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') document.querySelectorAll('.modal.open').forEach(closeModal); });
+</script>
+</body>
+</html>
