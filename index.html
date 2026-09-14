@@ -24,13 +24,13 @@
     .capabilities{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.capability{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;min-height:210px}.capability h3{font-size:19px;letter-spacing:-.025em;margin:0 0 10px}.capability p{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 16px}.mini{display:grid;gap:7px}.mini span{font-size:12px;color:#d2d7df}.mini span::before{content:"→";color:var(--accent);margin-right:7px}
 
     .projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.project-card{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:18px;display:flex;flex-direction:column;min-height:310px;overflow:hidden}.project-card:hover{border-color:rgba(139,255,207,.25)}.project-category{font-size:11px;text-transform:uppercase;letter-spacing:.11em;color:var(--accent);font-weight:800;margin-bottom:14px}.project-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.project-card h3{font-size:25px;letter-spacing:-.035em;margin:0}.state{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);border:1px solid rgba(139,255,207,.25);border-radius:999px;padding:5px 7px}.project-copy{font-size:14px;color:var(--muted);line-height:1.55;margin:14px 0 16px}.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}.stack span{border:1px solid var(--line);border-radius:999px;padding:5px 7px;font-size:10px;color:#c8cfda}.project-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.btn.disabled{opacity:.4;pointer-events:none}.view-project{cursor:pointer;background:transparent;color:var(--text)}
-    .project-preview{margin:-2px -2px 18px;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;background:#090d14}.browser-bar{height:31px;display:flex;align-items:center;gap:6px;padding:0 11px;border-bottom:1px solid rgba(255,255,255,.07);background:#111620}.browser-dot{width:7px;height:7px;border-radius:50%;background:#4d5564}.browser-url{margin-left:6px;font-size:9px;color:#6f7888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.seismic-ui{position:relative;height:190px;overflow:hidden;background:#080c12}.seismic-cover{display:block;width:100%;height:100%;object-fit:cover;object-position:center}.seismic-ui::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,9,15,.04),rgba(5,9,15,.22));box-shadow:inset 0 0 36px rgba(0,0,0,.3)}.preview-label{position:absolute;z-index:1;right:10px;top:10px;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:#d4dde7;background:rgba(7,12,19,.7);border:1px solid rgba(255,255,255,.14);padding:5px 7px;border-radius:999px;backdrop-filter:blur(7px)}.architecture-line{margin:2px 0 16px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02);font-size:11px;color:#c8cfda;line-height:1.45}.architecture-line strong{color:var(--text)}
+    .project-preview{margin:-2px -2px 18px;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;background:#090d14}.browser-bar{height:31px;display:flex;align-items:center;gap:6px;padding:0 11px;border-bottom:1px solid rgba(255,255,255,.07);background:#111620}.browser-dot{width:7px;height:7px;border-radius:50%;background:#4d5564}.browser-url{margin-left:6px;font-size:9px;color:#6f7888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.seismic-ui,.tourism-ui{position:relative;height:190px;overflow:hidden;background:#080c12}.seismic-cover,.tourism-cover{display:block;width:100%;height:100%;object-fit:cover}.seismic-cover{object-position:center}.tourism-cover{object-position:center top}.seismic-ui::after,.tourism-ui::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,9,15,.04),rgba(5,9,15,.22));box-shadow:inset 0 0 36px rgba(0,0,0,.3)}.preview-label{position:absolute;z-index:1;right:10px;top:10px;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:#d4dde7;background:rgba(7,12,19,.7);border:1px solid rgba(255,255,255,.14);padding:5px 7px;border-radius:999px;backdrop-filter:blur(7px)}.architecture-line{margin:2px 0 16px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02);font-size:11px;color:#c8cfda;line-height:1.45}.architecture-line strong{color:var(--text)}
     .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,6,10,.78);backdrop-filter:blur(8px)}.modal.open{display:flex}.modal-card{width:min(820px,100%);max-height:86vh;overflow:auto;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:26px}.modal-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.modal-head h3{font-size:30px;letter-spacing:-.04em;margin:4px 0 0}.close{border:1px solid var(--line);background:transparent;color:var(--text);width:38px;height:38px;border-radius:10px;font-size:20px;cursor:pointer}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}.detail-block{border-top:1px solid var(--line);padding-top:16px}.detail-block h4{font-size:13px;margin:0 0 10px}.detail-block p,.detail-block li{font-size:13px;color:var(--muted);line-height:1.55}.detail-block ul{margin:0;padding-left:18px;display:grid;gap:6px}.checks{display:grid;gap:10px}.check{font-size:13px;color:var(--muted);line-height:1.45}.check::before{content:"✓";color:var(--accent);font-weight:900;margin-right:8px}
 
     .custom{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.custom p{font-size:18px;color:var(--muted);line-height:1.6;margin:5px 0 0}.tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tech span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:12px;color:var(--muted)}
     .contact{display:flex;align-items:center;justify-content:space-between;gap:28px}.contact p{color:var(--muted);margin:9px 0 0}footer{padding:26px 0;color:var(--muted);font-size:13px}.footer{display:flex;justify-content:space-between;gap:20px}
     @media(max-width:1000px){.capabilities{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:1fr}}
-    @media(max-width:680px){.seismic-ui{height:175px}nav{display:none}.hero{padding:74px 0 58px}.section-head,.contact{align-items:flex-start;flex-direction:column}.capabilities,.custom{grid-template-columns:1fr}.custom{gap:22px}.footer{flex-direction:column;gap:5px}.project-card h3{font-size:23px}.detail-grid{grid-template-columns:1fr}.modal{padding:12px}.modal-card{padding:20px}}
+    @media(max-width:680px){.seismic-ui,.tourism-ui{height:175px}nav{display:none}.hero{padding:74px 0 58px}.section-head,.contact{align-items:flex-start;flex-direction:column}.capabilities,.custom{grid-template-columns:1fr}.custom{gap:22px}.footer{flex-direction:column;gap:5px}.project-card h3{font-size:23px}.detail-grid{grid-template-columns:1fr}.modal{padding:12px}.modal-card{padding:20px}}
   </style>
 </head>
 <body>
@@ -121,14 +121,21 @@
         </article>
 
         <article class="project-card">
+          <div class="project-preview" aria-label="Browser-style preview of the Canarias Tourism Pulse dashboard">
+            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">canarias-tourism-pulse-production.up.railway.app</span></div>
+            <div class="tourism-ui">
+              <img class="tourism-cover" src="assets/canarias-tourism-dashboard.svg" alt="Canarias Tourism Pulse dashboard with tourism KPIs and charts" />
+              <div class="preview-label">Tourism analytics</div>
+            </div>
+          </div>
           <div class="project-category">Data Automation · Reporting Dashboard</div>
           <div class="project-title-row"><h3>Canarias Tourism Pulse</h3><span class="state">Finished</span></div>
-          <p class="project-copy">Automated tourism dashboard and Excel reporting powered by official ISTAC API data.</p>
-          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Railway</span></div>
+          <p class="project-copy">An automated tourism dashboard and continuously updated Excel report powered by official ISTAC data for the Canary Islands.</p>
+          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Google Drive</span><span>Railway</span></div>
           <div class="project-actions">
-            <span class="btn primary disabled" aria-disabled="true">Live Demo</span>
-            <span class="btn disabled" aria-disabled="true">GitHub</span>
-            <button class="btn view-project" data-modal="tourism-modal">View Project</button>
+            <a class="btn primary" href="https://canarias-tourism-pulse-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a>
+            <a class="btn" href="https://drive.google.com/file/d/1_iy32lEjZE9oY2rUFI_xnerajH5SjZJL/view" target="_blank" rel="noopener noreferrer">Open Excel Report ↗</a>
+            <button class="btn view-project" data-modal="tourism-modal">How it works</button>
           </div>
         </article>
       </div>
@@ -187,7 +194,8 @@
         <div><div class="project-category">Finished · Data Automation · Reporting</div><h3 id="tourism-title">Canarias Tourism Pulse</h3></div>
         <button class="close" data-close aria-label="Close">×</button>
       </div>
-      <p class="project-copy">An automated dashboard analysing official Canary Islands tourism data from the ISTAC API. It turns public or company data into an automatically updated web dashboard and an exportable Excel report.</p>
+      <p class="project-copy">An automated dashboard analysing official Canary Islands tourism data from ISTAC. It turns public or company data into an automatically updated web dashboard and an Excel report published to Google Drive.</p>
+      <div class="architecture-line"><strong>Architecture:</strong> ISTAC API → Scheduled Python Sync → Validated JSON Snapshot → Dash Dashboard + Excel Report → Google Drive</div>
       <div class="detail-grid">
         <div class="detail-block">
           <h4>Features</h4>
@@ -195,7 +203,7 @@
         </div>
         <div class="detail-block">
           <h4>Architecture</h4>
-          <p>One lightweight service: Python, Dash, Plotly, OpenPyXL, Gunicorn, JSON snapshot, background job and Railway. No database and no separate FastAPI backend.</p>
+          <p>One lightweight service: Python, Dash, Plotly, OpenPyXL, Gunicorn, JSON snapshot, background job, Google Drive and Railway. No database and no separate FastAPI backend.</p>
         </div>
         <div class="detail-block">
           <h4>What it can mean for a business</h4>
@@ -203,7 +211,8 @@
         </div>
         <div class="detail-block">
           <h4>Technology</h4>
-          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Gunicorn</span><span>JSON</span><span>Background Job</span><span>Railway</span></div>
+          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Gunicorn</span><span>JSON</span><span>Background Job</span><span>Google Drive</span><span>Railway</span></div>
+          <div class="project-actions"><a class="btn primary" href="https://canarias-tourism-pulse-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a><a class="btn" href="https://drive.google.com/file/d/1_iy32lEjZE9oY2rUFI_xnerajH5SjZJL/view" target="_blank" rel="noopener noreferrer">Open Excel Report ↗</a></div>
         </div>
       </div>
     </div>
