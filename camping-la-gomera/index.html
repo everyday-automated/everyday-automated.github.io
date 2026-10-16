@@ -13,6 +13,8 @@
 
 
 .section-add{display:block;width:calc(100% - 24px);margin:8px 12px 12px;text-align:center;border:1px dashed #8da99b}.toolbar-actions{flex-wrap:wrap}
+
+.individual-checks{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start;margin:4px 2px 5px}.person-check{display:inline-flex;gap:7px;align-items:center;padding:7px 9px;background:#e5eee8;border-radius:10px;font-weight:700;font-size:12px;cursor:pointer}.person-check input{accent-color:#218064;width:18px;height:18px}.packing-item:has(.individual-checks){flex-wrap:wrap}.packing-item:has(.individual-checks) .item-main{flex:1;min-width:120px}.packing-item:has(.individual-checks) .individual-checks{order:3;width:100%;margin-left:5px}
 </style>
   
   
@@ -76,6 +78,7 @@
       <div class="modal-heading"><h2 id="modalTitle">Añadir artículo</h2><button type="button" id="closeModal" aria-label="Cerrar" class="icon-btn">×</button></div>
       <label>Artículo <input id="itemName" type="text" maxlength="160" required placeholder="Ej. Linterna de repuesto"></label>
       <label>Categoría <input id="itemCategory" list="categoriesDatalist" maxlength="80" required placeholder="Elige o escribe otra categoría"><datalist id="categoriesDatalist"></datalist></label>
+      <label>Tipo de casillas <select id="itemMode"><option value="shared">Una casilla compartida</option><option value="individual">Casillas por persona</option></select></label>
       <label>Responsable <select id="itemAssignee"><option value="Ambos">👫 Ambos</option><option value="Paulina">🌼 Paulina</option><option value="Néstor">🧭 Néstor</option></select></label>
       <div class="dialog-actions"><button type="button" id="deleteBtn" class="button-danger" hidden>Eliminar</button><button type="button" id="cancelBtn" class="button-secondary">Cancelar</button><button type="submit" class="button-primary">Guardar</button></div>
     </form>
@@ -467,7 +470,7 @@ window.CAMP_SEED = [
   const $ = id => document.getElementById(id);
   const LOCAL_ITEMS_KEY = 'la_gomera_local_items_v2';
   const SESSION_KEY = 'la_gomera_shared_session_v2';
-  const VERSION = '2.1.0';
+  const VERSION = '2.2.0';
   const STORAGE = {
     get(key, fallback) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch { return fallback; } },
     set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} }
@@ -647,7 +650,7 @@ window.CAMP_SEED = [
     state.busy.add('refresh');
     try {
       const response = await state.db.from('camp_items')
-        .select('id, title, category, assigned_to, checked, checked_by, sort_order')
+        .select('id, title, category, assigned_to, checked, checked_by, sort_order, check_mode, paulina_checked, nestor_checked')
         .eq('list_id', state.listId).order('sort_order', { ascending: true }).order('created_at');
       if (response.error) throw response.error;
       state.items = response.data || [];
@@ -680,14 +683,28 @@ window.CAMP_SEED = [
     document.addEventListener('visibilitychange', () => { if (!document.hidden) scheduleRefresh(); });
     window.addEventListener('online', scheduleRefresh);
   }
+  function requirements(item) {
+    if (item.check_mode !== 'individual') return {total:1,done:item.checked ? 1 : 0};
+    const who=item.assigned_to==='Ambos' ? ['Paulina','Néstor'] : [item.assigned_to];
+    return {total:who.length,done:who.filter(n=>n==='Paulina' ? item.paulina_checked : item.nestor_checked).length};
+  }
+  function complete(item) {const x=requirements(item);return x.done===x.total;}
+  function taskInput(item,person) {
+    const input=document.createElement('input');input.type='checkbox';input.className='check';
+    const key=person==='Paulina'?'paulina_checked':'nestor_checked';
+    input.checked=!!item[key];input.disabled=state.busy.has(item.id);
+    input.setAttribute('aria-label',item.title+' — '+person);
+    input.addEventListener('change',()=>updateItem(item,{[key]:input.checked}));
+    return input;
+  }
   function updateProgress() {
-    const total = state.items.length;
-    const done = state.items.filter(x => x.checked).length;
+    const total = state.items.reduce((n,x)=>n+requirements(x).total,0);
+    const done = state.items.reduce((n,x)=>n+requirements(x).done,0);
     $('progressLabel').textContent = `${done} de ${total} preparados`;
     $('progressPercent').textContent = `${total ? Math.round(done / total * 100) : 0} %`;
     $('progressFill').style.width = `${total ? done / total * 100 : 0}%`;
-    const paulina = state.items.filter(x => x.checked && x.checked_by === 'Paulina').length;
-    const nestor = state.items.filter(x => x.checked && x.checked_by === 'Néstor').length;
+    const paulina = state.items.filter(x=>x.check_mode==='individual'? (x.assigned_to!=='Néstor'&&x.paulina_checked) : (x.checked&&x.checked_by==='Paulina')).length;
+    const nestor = state.items.filter(x=>x.check_mode==='individual'? (x.assigned_to!=='Paulina'&&x.nestor_checked) : (x.checked&&x.checked_by==='Néstor')).length;
     $('paulinaCount').textContent = paulina;
     $('nestorCount').textContent = nestor;
   }
@@ -702,8 +719,8 @@ window.CAMP_SEED = [
     updateProgress();
     const q = state.search.toLocaleLowerCase('es');
     const visible = state.items.filter(item => {
-      if (state.filter === 'done' && !item.checked) return false;
-      if (state.filter === 'todo' && item.checked) return false;
+      if (state.filter === 'done' && !complete(item)) return false;
+      if (state.filter === 'todo' && complete(item)) return false;
       if (state.filter === 'mine' && item.assigned_to !== 'Ambos' && item.assigned_to !== state.person) return false;
       return item.title.toLocaleLowerCase('es').includes(q) || item.category.toLocaleLowerCase('es').includes(q);
     });
@@ -713,7 +730,8 @@ window.CAMP_SEED = [
     for (const category of categories) {
       const items = visible.filter(x => x.category === category).sort((a,b) => a.sort_order - b.sort_order || a.title.localeCompare(b.title, 'es'));
       const allItems = state.items.filter(x => x.category === category);
-      const completed = allItems.filter(x => x.checked).length;
+      const completed = allItems.reduce((n,x)=>n+requirements(x).done,0);
+      const totalTasks=allItems.reduce((n,x)=>n+requirements(x).total,0);
       const block = document.createElement('details');
       block.className = 'category';
       block.open = Boolean(q || state.filter !== 'all' || state.opened.has(category));
@@ -725,11 +743,11 @@ window.CAMP_SEED = [
       const icon = document.createElement('span'); icon.className = 'category-icon'; icon.textContent = icons[category] || '🧾';
       const title = document.createElement('span'); title.className = 'category-name'; title.textContent = category;
       left.append(icon, title);
-      const count = document.createElement('span'); count.className = 'category-counter'; count.textContent = `${completed} / ${allItems.length}`;
+      const count = document.createElement('span'); count.className = 'category-counter'; count.textContent = `${completed} / ${totalTasks}`;
       head.append(left, count); block.append(head);
       const body = document.createElement('div'); body.className = 'category-items';
       for (const item of items) {
-        const row = document.createElement('div'); row.className = 'packing-item' + (item.checked ? ' checked' : '');
+        const row = document.createElement('div'); row.className = 'packing-item' + (complete(item) ? ' checked' : '');
         const input = document.createElement('input'); input.type = 'checkbox'; input.className = 'check'; input.checked = !!item.checked;
         input.disabled = state.busy.has(item.id); input.id = 'c-' + item.id;
         input.setAttribute('aria-label', 'Preparado: ' + item.title);
@@ -744,7 +762,17 @@ window.CAMP_SEED = [
         const edit = document.createElement('button'); edit.type = 'button'; edit.className = 'item-edit'; edit.textContent = '✎';
         edit.title = 'Editar artículo'; edit.setAttribute('aria-label', 'Editar ' + item.title);
         edit.addEventListener('click', () => openItemDialog(item));
-        row.append(input,label,edit); body.append(row);
+        if (item.check_mode==='individual') {
+          const members=item.assigned_to==='Ambos'?['Paulina','Néstor']:[item.assigned_to];
+          const checks=document.createElement('div');checks.className='individual-checks';
+          for (const member of members) {
+            const personLabel=document.createElement('label');personLabel.className='person-check';
+            personLabel.append(taskInput(item,member),document.createTextNode(member==='Paulina'?'🌼 Paulina':'🧭 Néstor'));
+            checks.append(personLabel);
+          }
+          row.append(label,checks,edit);
+        } else row.append(input,label,edit);
+        body.append(row);
       }
       const addHere = document.createElement('button');
       addHere.type='button'; addHere.className='button-secondary section-add';
@@ -787,6 +815,7 @@ window.CAMP_SEED = [
     $('itemName').value = item?.title || '';
     $('itemCategory').value = item?.category || chosenCategory || '';
     $('itemAssignee').value = item?.assigned_to || 'Ambos';
+    $('itemMode').value = item?.check_mode || 'shared';
     $('deleteBtn').hidden = !item;
     const opts = [...new Set([...groups.map(g => g.name), ...state.categories.map(x=>x.name), ...state.items.map(x => x.category)])].sort(categorySort);
     const frag = document.createDocumentFragment();
@@ -800,6 +829,7 @@ window.CAMP_SEED = [
     const title = $('itemName').value.trim();
     const category = $('itemCategory').value.trim();
     const assigned_to = $('itemAssignee').value;
+    const check_mode = $('itemMode').value;
     if (!title || !category || title.length > 160 || category.length > 80) return notify('Completa nombre y categoría.');
     if (!['Ambos', 'Paulina', 'Néstor'].includes(assigned_to)) return;
     const submit = $('itemForm').querySelector('button[type="submit"]'); submit.disabled = true;
@@ -807,10 +837,10 @@ window.CAMP_SEED = [
       if (state.editingId) {
         const item = state.items.find(x => x.id === state.editingId);
         if (!item) throw new Error('Artículo no encontrado');
-        const saved = await updateItem(item, { title, category, assigned_to });
+        const saved = await updateItem(item, { title, category, assigned_to, check_mode });
         if (!saved) throw new Error('La edición no se ha guardado.');
       } else {
-        const payload = { title, category, assigned_to, checked: false, sort_order: Math.max(0, ...state.items.map(x=>x.sort_order || 0)) + 1 };
+        const payload = { title, category, assigned_to, check_mode, checked: false, paulina_checked:false, nestor_checked:false, sort_order: Math.max(0, ...state.items.map(x=>x.sort_order || 0)) + 1 };
         if (state.cloud) {
           const response = await state.db.from('camp_items').insert({ list_id: state.listId, ...payload }).select('id').single();
           if (response.error) throw response.error;
