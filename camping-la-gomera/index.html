@@ -473,6 +473,30 @@ window.CAMP_SEED = [
     set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} }
   };
   const groups = window.CAMP_SEED || [];
+  // Datos iniciales para listas nuevas. Los datos existentes viven en Supabase.
+  const oldTent = groups.find(g=>g.name==='Tienda y descanso');
+  if (oldTent) {
+    const extras = [
+      'ITV vigente','Seguro del Land Rover en vigor','Documentación del vehículo',
+      'Comprobar funcionamiento del techo elevable','Revisar cierre y juntas del techo',
+      'Comprobar bisagras y soportes del techo','Lona del techo sin roturas ni filtraciones',
+      'Colchón de techo y funda','Escalera de acceso al techo','Mosquitera y ventilación del techo',
+      'Comprobar luces (cortas, largas, frenos e intermitentes)','Estado y presión de neumáticos',
+      'Rueda de repuesto, gato y llave de ruedas','Aceite del motor','Refrigerante',
+      'Líquido de frenos y limpiaparabrisas','Batería y arranque','Frenos',
+      'Comprobar posibles fugas de combustible o aceite','Herramientas básicas',
+      'Triángulos o baliza V16 homologada','Chalecos reflectantes','Cables de arranque',
+      'Extintor pequeño','Depósito lleno antes de salir','Llaves de repuesto',
+      'Comprobar altura del vehículo para el ferry','Comprobar sujeción del equipaje'
+    ];
+    oldTent.name='Land Rover';oldTent.icon='🚙';oldTent.items=extras;
+    groups.splice(1,0,{name:'Descanso',icon:'🛏️',items:[
+      'Colchón hinchable o esterillas aislantes','Inflador',
+      'Sacos de dormir adecuados para noches frías','Almohadas',
+      'Mantas adicionales','Sábana','Kit de reparación del colchón',
+      'Tapones para los oídos','Antifaz para dormir'
+    ]});
+  }
   const icons = Object.fromEntries(groups.map(g => [g.name, g.icon]));
   const baseItems = groups.flatMap((g, gi) => g.items.map((title, ix) => ({
     id: `local-${gi}-${ix}`, title, category: g.name, assigned_to: 'Ambos', checked: false,
