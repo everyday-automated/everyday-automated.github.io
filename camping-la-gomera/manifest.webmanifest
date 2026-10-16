@@ -1,0 +1,31 @@
+{
+  "name": "La Gomera · Paulina + Néstor",
+  "short_name": "La Gomera",
+  "description": "Nuestra lista compartida para viajar en Land Rover por La Gomera",
+  "lang": "es",
+  "id": "/camping-la-gomera/",
+  "start_url": "/camping-la-gomera/",
+  "scope": "/camping-la-gomera/",
+  "display": "standalone",
+  "background_color": "#073127",
+  "theme_color": "#164c40",
+  "orientation": "any",
+  "categories": [
+    "travel",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/camping-la-gomera/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/camping-la-gomera/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -4,6 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#164c40">
+  <link rel="manifest" href="/camping-la-gomera/manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="192x192" href="/camping-la-gomera/icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/camping-la-gomera/icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="La Gomera">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="description" content="Lista de camping compartida para Paulina y Néstor en La Gomera.">
   <title>La Gomera · Paulina & Néstor</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2215%22%20fill%3D%22%23164c40%22/%3E%3Cpath%20d%3D%22M10%2050%2032%2014%2054%2050Z%22%20fill%3D%22%23fcbe63%22/%3E%3Cpath%20d%3D%22M32%2014v36M22%2050%2032%2034%2042%2050%22%20fill%3D%22none%22%20stroke%3D%22%23164c40%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E%0A" type="image/svg+xml">
@@ -19,6 +25,16 @@
   
   
   
+
+<style>
+.pwa-banner{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;margin:14px 0;border:1px solid #b7d8c5;background:#e8f4e9;color:#184536;border-radius:14px;font-size:13px}
+.pwa-banner[hidden]{display:none!important}
+.pwa-banner__copy{flex:1;min-width:155px}
+.pwa-banner__install{border:0;border-radius:10px;padding:10px 14px;background:#164c40;color:#fff;font-weight:700;cursor:pointer}
+.pwa-banner__dismiss{border:0;background:transparent;color:#365b4b;font-size:22px;cursor:pointer;padding:3px 8px}
+@media(display-mode:standalone){.pwa-banner{display:none!important}}
+</style>
+
 </head>
 <body>
   <div class="app">
@@ -32,6 +48,7 @@
       </section>
     </header>
     <main>
+      <div id="pwaBanner" class="pwa-banner" hidden><span aria-hidden="true">🚙</span><span class="pwa-banner__copy"><strong>La Gomera como app</strong> — acceso directo desde tu móvil.</span><button id="pwaInstall" class="pwa-banner__install" type="button">Instalar app</button><button id="pwaDismiss" class="pwa-banner__dismiss" type="button" aria-label="Ocultar">×</button></div>
       <div id="notice" class="notice" role="status" hidden></div>
       <section id="welcome" class="welcome panel" hidden>
         <div class="welcome-icon">🤝</div>
@@ -969,6 +986,47 @@ window.CAMP_SEED = [
   } else localMode();
 })();
 
+</script>
+
+<script>
+(() => {
+  const banner=document.getElementById('pwaBanner');
+  let installPrompt=null;
+  const standalone=window.matchMedia('(display-mode: standalone)').matches || navigator.standalone===true;
+  try { if(!standalone && sessionStorage.getItem('gomera-pwa-hide')!=='yes')banner.hidden=false; } catch { if(!standalone)banner.hidden=false; }
+  window.addEventListener('beforeinstallprompt',event=>{
+    event.preventDefault();
+    installPrompt=event;
+    if(!standalone)banner.hidden=false;
+  });
+  window.addEventListener('appinstalled',()=>{installPrompt=null;banner.hidden=true;});
+  document.getElementById('pwaInstall').addEventListener('click',async()=>{
+    if(installPrompt){
+      const prompt=installPrompt;
+      installPrompt=null;
+      await prompt.prompt();
+      const result=await prompt.userChoice;
+      if(result?.outcome==='accepted')banner.hidden=true;
+    }else{
+      const ios=/iPad|iPhone|iPod/.test(navigator.userAgent);
+      alert(ios
+        ? 'En Safari: pulsa Compartir y elige «Añadir a pantalla de inicio».'
+        : 'En Samsung Internet: abre el menú ⋮ y elige «Añadir página a» → «Pantalla de inicio». En Chrome: menú ⋮ → «Instalar aplicación».');
+    }
+  });
+  document.getElementById('pwaDismiss').addEventListener('click',()=>{
+    banner.hidden=true;
+    try {sessionStorage.setItem('gomera-pwa-hide','yes');} catch {}
+  });
+  if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
+    window.addEventListener('load',()=>{
+      const folder=location.pathname.startsWith('/camping-la-gomera/');
+      const script=folder?'/camping-la-gomera/sw.js':'/sw-la-gomera.js';
+      const scope=folder?'/camping-la-gomera/':'/la-gomera.html';
+      navigator.serviceWorker.register(script,{scope}).catch(err=>console.warn('Service Worker:',err));
+    });
+  }
+})();
 </script>
 </body>
 </html>
