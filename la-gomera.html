@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#164c40">
+  <meta name="description" content="Lista de camping compartida para Paulina y Néstor en La Gomera.">
+  <title>La Gomera · Paulina & Néstor</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2215%22%20fill%3D%22%23164c40%22/%3E%3Cpath%20d%3D%22M10%2050%2032%2014%2054%2050Z%22%20fill%3D%22%23fcbe63%22/%3E%3Cpath%20d%3D%22M32%2014v36M22%2050%2032%2034%2042%2050%22%20fill%3D%22none%22%20stroke%3D%22%23164c40%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E%0A" type="image/svg+xml">
+  <style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-synthesis:none;--dark:#193b35;--forest:#164c40;--green:#287661;--paper:#f6f7f1;--cream:#fffdfa;--border:#e2e8df;--muted:#687c72;--sun:#f9cf83;--red:#ad4942;--shadow:0 4px 20px rgba(19,50,37,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--dark);min-width:290px}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8ccdbc;outline-offset:2px}button:disabled{opacity:.6;cursor:wait}[hidden]{display:none!important}.app{max-width:820px;margin:0 auto;min-height:100svh;background:var(--paper)}.hero{background:radial-gradient(ellipse at top right,#287260 1%,transparent 48%),linear-gradient(135deg,#103a34,#195b4b);color:white;padding:29px clamp(18px,5vw,40px) 30px;border-radius:0 0 28px 28px}.hero-badges,.hero-title,.progress-heading,.progress-people,.toolbar-top,.toolbar-actions,.modal-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:#e9e2be}.sync-chip{font-size:12px;border-radius:999px;padding:7px 11px;background:rgba(255,255,255,.13);white-space:nowrap}.sync-chip.online{background:#d8f1e5;color:#0b523a}.sync-chip.offline{background:#fff1c9;color:#704a14}.hero-title{margin-top:24px}.hero h1{font-size:clamp(31px,7vw,46px);letter-spacing:-1.8px;margin:0 0 5px;line-height:1.1}.hero-title p{margin:0;font-size:14px;color:#d0e7da}.hero-title p strong{color:#fff}.hero-illustration{font-size:56px;transform:rotate(-10deg);filter:drop-shadow(0 3px 5px #06291e)}.progress-card{margin-top:24px;background:#fffefa;color:var(--dark);border-radius:17px;padding:16px 18px;box-shadow:0 10px 20px rgba(0,0,0,.08)}.progress-heading{font-weight:800;font-size:14px}.progress-heading strong{font-size:17px;color:var(--green)}.progress-track{height:10px;background:#e7eee7;border-radius:999px;overflow:hidden;margin-top:13px}.progress-track span{display:block;height:100%;background:linear-gradient(90deg,#57b793,#278468);border-radius:999px;transition:width .25s}.progress-people{margin-top:13px;color:#587267;font-size:12px}.progress-people strong{color:var(--forest)}main{padding:20px clamp(14px,4vw,32px) 45px}.notice{background:#fff2d5;border:1px solid #edcc91;border-radius:12px;padding:14px 16px;color:#6d501e;line-height:1.45;margin-bottom:16px;font-size:14px}.panel{background:var(--cream);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}.welcome{padding:30px 22px;text-align:center;max-width:580px;margin:10px auto}.welcome-icon{font-size:40px}.welcome h2{font-size:25px;letter-spacing:-.5px;margin:10px 0}.welcome p{color:var(--muted)}.field-label{font-size:14px;font-weight:750;margin-top:25px}.role-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.role-choice{padding:18px 10px;border-radius:15px;background:#f0f8f3;border:2px solid #d8ebdf;color:var(--dark);font-size:17px;font-weight:800}.role-choice span{font-size:24px;margin-right:6px}.role-choice:hover{border-color:var(--green);background:#e2f3e8}.join-manual{border-top:1px solid var(--border);margin-top:23px;padding-top:18px;display:grid;gap:10px;text-align:left}.join-manual label{font-size:13px;font-weight:650}.join-manual input{width:100%;border-radius:10px;border:1px solid var(--border);padding:12px}.toolbar{margin:6px 0 20px}.toolbar-top{margin-bottom:17px}.me-badge{background:#e6f2e8;border-radius:999px;padding:9px 13px;font-size:13px;font-weight:800;color:var(--forest)}.button-primary,.button-secondary,.button-danger{border-radius:12px;padding:12px 15px;border:1px solid var(--border);font-weight:750;transition:background .2s}.button-primary{background:var(--forest);border-color:var(--forest);color:white}.button-primary:hover{background:#246451}.button-secondary{background:#fff;color:var(--forest)}.button-secondary:hover{background:#edf5ef}.button-danger{background:#fff5f3;color:var(--red);border-color:#efd8d4}.button-danger:hover{background:#ffece8}.toolbar-actions{justify-content:flex-start;flex-wrap:wrap;gap:9px}.toolbar-actions .button-primary{flex:1}.toolbar-actions .button-secondary{font-size:13px}.filter-wrap{display:flex;gap:5px;background:#e7ede7;border-radius:14px;padding:5px;margin-top:19px;overflow-x:auto}.filter{flex:1;white-space:nowrap;padding:11px 9px;border:0;border-radius:10px;color:#506b5e;background:transparent;font-weight:750;font-size:13px}.filter.active{background:white;box-shadow:0 2px 6px #294f4320;color:var(--forest)}.searchbox{display:flex;align-items:center;margin-top:12px;border:1px solid var(--border);border-radius:13px;background:white;padding:0 14px;gap:8px;color:var(--muted)}.searchbox span{font-size:25px}.searchbox input{border:0;outline:none;background:transparent;padding:13px 0;width:100%;min-width:0}.category-groups{display:grid;gap:11px}.category{background:var(--cream);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}.category summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:17px;cursor:pointer}.category summary::-webkit-details-marker{display:none}.category-heading{display:flex;align-items:center;gap:10px;min-width:0}.category-icon{width:36px;height:36px;display:grid;place-items:center;background:#edf6ed;border-radius:10px;font-size:19px;flex-shrink:0}.category-name{font-size:15px;font-weight:820;line-height:1.25}.category-counter{font-size:12px;font-weight:800;color:var(--green);padding:6px 8px;background:#e8f4ea;border-radius:8px;white-space:nowrap}.category-items{border-top:1px solid var(--border);padding:2px 15px 7px}.packing-item{display:flex;align-items:center;gap:10px;padding:12px 0;min-height:61px;border-bottom:1px solid #eff1eb}.packing-item:last-child{border-bottom:0}.check{appearance:none;-webkit-appearance:none;min-width:23px;width:23px;height:23px;border:2px solid #b4c8bd;border-radius:7px;display:grid;place-content:center;background:#fff;cursor:pointer;flex-shrink:0}.check:checked{background:var(--green);border-color:var(--green)}.check:checked:after{content:'✓';font-size:17px;color:#fff;line-height:1}.item-main{flex:1;min-width:0;cursor:pointer}.item-title{font-size:14px;font-weight:600;line-height:1.4;overflow-wrap:anywhere}.packing-item.checked .item-title{text-decoration:line-through;color:#9aa9a0}.item-meta{font-size:11px;color:var(--muted);margin-top:4px}.item-meta.assigned{color:#317c61;font-weight:750}.item-edit{border:0;background:transparent;color:#8fa297;padding:8px;font-size:17px;border-radius:9px}.item-edit:hover{background:#edf5ee;color:var(--forest)}.empty{padding:30px 20px;text-align:center;border:1px dashed #c2d4c6;border-radius:15px;color:var(--muted)}.empty strong{display:block;color:var(--dark)}.tips{margin-top:23px;padding:18px 21px}.tips h2{font-size:17px;margin:0 0 13px}.tips p{font-size:13px;line-height:1.65;margin:12px 0;color:#496458}.tips p strong{color:var(--forest)}footer{color:var(--muted);font-size:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:0 25px 30px}.footer-link{color:var(--forest);background:transparent;border:0;text-decoration:underline}.modal{width:min(95vw,440px);max-height:min(90vh,750px);border:1px solid var(--border);border-radius:19px;padding:23px;background:var(--cream);box-shadow:0 15px 60px #163b3655;color:var(--dark)}.modal::backdrop{background:#061b18a1;backdrop-filter:blur(2px)}.modal-heading{margin-bottom:18px}.modal-heading h2{font-size:20px;margin:0}.icon-btn{border:0;background:transparent;color:var(--muted);font-size:28px}.modal form>label{display:grid;gap:8px;font-size:13px;font-weight:750;margin:15px 0}.modal form>label input,.modal form>label select{padding:12px;background:white;border-radius:10px;border:1px solid #cbd8ce;width:100%;color:var(--dark)}.dialog-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:26px}.dialog-actions .button-danger{margin-right:auto}.info-dialog-body{font-size:14px;color:#496458;line-height:1.7}.info-dialog-body code{font-size:12px;overflow-wrap:anywhere}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:100;background:#163f34;color:white;padding:13px 18px;border-radius:12px;max-width:90vw;min-width:180px;box-shadow:0 8px 28px #18352d4f;font-size:14px;text-align:center;transition:opacity .2s,transform .2s}.toast.visible{opacity:1;transform:translate(-50%,0)}@media (min-width:760px){.hero{padding-top:36px}.category-groups{grid-template-columns:1fr 1fr;align-items:start}.category{break-inside:avoid}.toolbar-actions .button-primary{flex:0 0 auto}.welcome{padding:42px}}@media (max-width:400px){.hero-illustration{font-size:38px}.button-secondary.share{font-size:12px;padding:10px}.toolbar-actions .button-secondary{padding:10px 7px}.filter{font-size:12px;padding:10px 6px}.progress-people{font-size:11px}}
+
+
+.section-add{display:block;width:calc(100% - 24px);margin:8px 12px 12px;text-align:center;border:1px dashed #8da99b}.toolbar-actions{flex-wrap:wrap}
+</style>
+  
+  
+  
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div class="hero-badges"><span class="eyebrow">☀️ NUESTRA ESCAPADA</span><span id="syncStatus" class="sync-chip" aria-live="polite">Preparando…</span></div>
+      <div class="hero-title"><div><h1>La Gomera <span class="wave">🌿</span></h1><p>La lista de <strong>Paulina + Néstor</strong></p></div><div class="hero-illustration" aria-hidden="true">⛺</div></div>
+      <section class="progress-card" aria-label="Progreso de preparación">
+        <div class="progress-heading"><span id="progressLabel">0 de 256 preparados</span><strong id="progressPercent">0 %</strong></div>
+        <div class="progress-track"><span id="progressFill" style="width:0%"></span></div>
+        <div class="progress-people"><span>🌼 Paulina <strong id="paulinaCount">0</strong></span><span>🧭 Néstor <strong id="nestorCount">0</strong></span></div>
+      </section>
+    </header>
+    <main>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <section id="welcome" class="welcome panel" hidden>
+        <div class="welcome-icon">🤝</div>
+        <h2>¡Preparemos la aventura juntos!</h2>
+        <p id="welcomeDescription">Una sola lista para los dos, siempre sincronizada.</p>
+        <p class="field-label">¿Quién eres?</p>
+        <div class="role-options">
+          <button type="button" data-role="Paulina" class="role-choice"><span>🌼</span> Paulina</button>
+          <button type="button" data-role="Néstor" class="role-choice"><span>🧭</span> Néstor</button>
+        </div>
+        <div id="joinManual" class="join-manual" hidden>
+          <label for="joinCode">¿Ya tenéis una lista? Pega aquí el código de invitación:</label>
+          <input id="joinCode" type="text" autocomplete="off" spellcheck="false" placeholder="Código privado (64 caracteres)">
+          <button class="button-secondary" id="joinByCode" type="button">Unirme a la lista</button>
+        </div>
+      </section>
+      <section id="workspace" hidden>
+        <div class="toolbar">
+          <div class="toolbar-top"><div id="meBadge" class="me-badge">🌼 Paulina</div><button class="button-secondary share" id="shareBtn" type="button">↗ Compartir con Néstor</button></div>
+          <div class="toolbar-actions"><button id="addBtn" class="button-primary" type="button"><span>＋</span> Añadir punto</button><button id="addSectionBtn" class="button-secondary" type="button">＋ Nueva sección</button><button id="exportBtn" class="button-secondary" type="button">↓ Copia de seguridad</button></div>
+          <div class="filter-wrap" role="group" aria-label="Filtrar artículos">
+            <button type="button" class="filter active" data-filter="all">Todos</button>
+            <button type="button" class="filter" data-filter="todo">Pendientes</button>
+            <button type="button" class="filter" data-filter="done">Listos ✓</button>
+            <button type="button" class="filter" data-filter="mine">Lo mío</button>
+          </div>
+          <label class="searchbox"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar en la lista…" aria-label="Buscar artículos"></label>
+        </div>
+        <div id="categoryGroups" class="category-groups" aria-live="polite"></div>
+        <section class="tips panel">
+          <h2>📌 Antes de salir</h2>
+          <p><strong>🌳 Garajonay:</strong> prohibido acampar y hacer vivac dentro del Parque Nacional. Fuera de él, comprobad si el lugar permite pernoctar y utilizar hornillos. Atención a las alertas por incendios.</p>
+          <p><strong>🚢 Fred. Olsen:</strong> consultad las condiciones para transportar cartuchos de gas, también si viajáis en coche.</p>
+          <p><strong>🪪 Residencia:</strong> verificad que SARA confirme el descuento. Si está verificado, no se necesita padrón. Si no, consultad el certificado de residencia para viajes.</p>
+          <p><strong>🧥 Ropa de abrigo:</strong> noches frías y húmedas en zonas altas, con niebla y viento. Mantas, saco y ropa térmica.</p>
+          <p><strong>🧊 Comida:</strong> alimentos refrigerados a 4 °C o menos; priorizad conservas y comida estable sin frío.</p>
+        </section>
+      </section>
+    </main>
+    <footer><span>Hecho para Paulina + Néstor · La Gomera 🏝️</span><button type="button" class="footer-link" id="helpBtn">¿Cómo funciona?</button></footer>
+  </div>
+  <dialog id="itemDialog" class="modal">
+    <form id="itemForm">
+      <div class="modal-heading"><h2 id="modalTitle">Añadir artículo</h2><button type="button" id="closeModal" aria-label="Cerrar" class="icon-btn">×</button></div>
+      <label>Artículo <input id="itemName" type="text" maxlength="160" required placeholder="Ej. Linterna de repuesto"></label>
+      <label>Categoría <input id="itemCategory" list="categoriesDatalist" maxlength="80" required placeholder="Elige o escribe otra categoría"><datalist id="categoriesDatalist"></datalist></label>
+      <label>Responsable <select id="itemAssignee"><option value="Ambos">👫 Ambos</option><option value="Paulina">🌼 Paulina</option><option value="Néstor">🧭 Néstor</option></select></label>
+      <div class="dialog-actions"><button type="button" id="deleteBtn" class="button-danger" hidden>Eliminar</button><button type="button" id="cancelBtn" class="button-secondary">Cancelar</button><button type="submit" class="button-primary">Guardar</button></div>
+    </form>
+  </dialog>
+  <dialog id="sectionDialog" class="modal">
+    <form id="sectionForm"><div class="modal-heading"><h2>Nueva sección</h2><button type="button" id="closeSection" class="icon-btn" aria-label="Cerrar">×</button></div>
+    <label>Nombre de la sección <input id="sectionName" maxlength="80" required placeholder="Ej. Herramientas, comida, Land Rover"></label>
+    <label>Icono <input id="sectionIcon" maxlength="12" value="📋"></label>
+    <div class="dialog-actions"><button type="button" class="button-secondary" id="cancelSection">Cancelar</button><button type="submit" class="button-primary">Crear sección</button></div></form>
+  </dialog>
+  <dialog id="infoDialog" class="modal">
+    <div class="modal-heading"><h2>Cómo funciona</h2><button type="button" id="closeInfo" aria-label="Cerrar" class="icon-btn">×</button></div>
+    <div id="infoText" class="info-dialog-body"></div>
+    <button type="button" id="closeInfoBottom" class="button-primary">Entendido</button>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+// Configuración pública de Supabase. No incluir secret/service_role keys.
+window.CAMP_CONFIG = {
+  url: "https://txnyhrotusrojlvqjeic.supabase.co",
+  publishableKey: "sb_publishable_uTfsTDNtOs3CI0Cq60wzxg_vcu48Hx3"
+};
+
+</script>
+<script>
+window.CAMP_SEED = [
+  {
+    "name": "Tienda y descanso",
+    "icon": "⛺",
+    "items": [
+      "Tienda de campaña",
+      "Piquetas",
+      "Martillo para piquetas",
+      "Cuerdas y tensores",
+      "Lona impermeable para el suelo",
+      "Colchón hinchable o esterillas aislantes",
+      "Inflador",
+      "Sacos de dormir adecuados para noches frías",
+      "Almohadas",
+      "Mantas adicionales",
+      "Sábana",
+      "Kit de reparación del colchón",
+      "Tapones para los oídos",
+      "Antifaz para dormir"
+    ]
+  },
+  {
+    "name": "Iluminación y electrónica",
+    "icon": "💡",
+    "items": [
+      "Lámpara LED de camping",
+      "Lámpara antimosquitos",
+      "Linternas",
+      "Linternas frontales",
+      "Pilas de repuesto",
+      "Baterías externas (powerbanks)",
+      "Cargadores de móvil",
+      "Cargador USB para el coche",
+      "Cables USB",
+      "Guirnalda LED para la tienda"
+    ]
+  },
+  {
+    "name": "Mosquitos e insectos",
+    "icon": "🦟",
+    "items": [
+      "Repelente de mosquitos (Relec / Autan)",
+      "Crema para las picaduras",
+      "Mosquitera",
+      "Pinzas para quitar astillas"
+    ]
+  },
+  {
+    "name": "Cocina",
+    "icon": "🍳",
+    "items": [
+      "Camping gas / hornillo (solo donde esté permitido)",
+      "Cartuchos de gas compatibles (consultar Fred. Olsen)",
+      "Mechero",
+      "Olla",
+      "Sartén",
+      "Tapa para la olla",
+      "Cuchillo de cocina",
+      "Tabla de cortar",
+      "Platos",
+      "Cuencos",
+      "Vasos",
+      "Tazas",
+      "Cubiertos",
+      "Espátula o cucharón",
+      "Abrelatas",
+      "Sacacorchos",
+      "Abrebotellas",
+      "Nevera portátil",
+      "Acumuladores de frío",
+      "Termómetro para la nevera",
+      "Táperes",
+      "Bolsas herméticas",
+      "Papel de aluminio",
+      "Papel de cocina",
+      "Botellas reutilizables",
+      "Termo"
+    ]
+  },
+  {
+    "name": "Limpieza",
+    "icon": "🧽",
+    "items": [
+      "Toallitas húmedas",
+      "Papel higiénico",
+      "Papel de cocina extra",
+      "Bolsas de basura resistentes",
+      "Bolsas pequeñas para residuos",
+      "Lavavajillas",
+      "Esponja",
+      "Bayeta",
+      "Trapos de cocina",
+      "Barreño plegable",
+      "Gel desinfectante de manos",
+      "Jabón biodegradable",
+      "Escoba pequeña",
+      "Cuerda para tender",
+      "Pinzas de ropa",
+      "Cinta americana",
+      "Bolsas para ropa sucia"
+    ]
+  },
+  {
+    "name": "Higiene personal",
+    "icon": "🚿",
+    "items": [
+      "Cepillo de dientes",
+      "Pasta de dientes",
+      "Hilo dental",
+      "Gel de ducha",
+      "Champú",
+      "Acondicionador",
+      "Cepillo de pelo",
+      "Gomas de pelo",
+      "Desodorante",
+      "Crema facial",
+      "Crema hidratante corporal",
+      "Protector solar SPF 50",
+      "Protector labial",
+      "Toallas de microfibra",
+      "Toalla de playa",
+      "Chanclas",
+      "Maquinilla de afeitar",
+      "Espejo pequeño",
+      "Pinzas de depilar",
+      "Tampones",
+      "Compresas",
+      "Salvaslips",
+      "Toallitas íntimas",
+      "Pañuelos de papel",
+      "Bolsitas para residuos íntimos",
+      "Ducha portátil / bolsa de ducha solar",
+      "Agua adicional para aseo",
+      "WC portátil o sistema para recoger residuos higiénicos",
+      "Bolsas estancas para residuos sanitarios",
+      "Lentillas, líquido y gafas (si hace falta)"
+    ]
+  },
+  {
+    "name": "Botiquín",
+    "icon": "💊",
+    "items": [
+      "Paracetamol",
+      "Ibuprofeno",
+      "Medicación habitual",
+      "Tiritas",
+      "Apósitos para ampollas",
+      "Desinfectante de heridas",
+      "Gasas estériles",
+      "Vendas",
+      "Esparadrapo",
+      "Suero fisiológico",
+      "Medicación para diarrea",
+      "Sales de rehidratación oral",
+      "Antihistamínico",
+      "Crema para quemaduras solares",
+      "Tijeras pequeñas",
+      "Pinzas",
+      "Termómetro"
+    ]
+  },
+  {
+    "name": "Ropa y abrigo",
+    "icon": "🧥",
+    "items": [
+      "Camisetas",
+      "Camisetas térmicas",
+      "Pantalones cortos",
+      "Pantalones largos",
+      "Pantalones térmicos para dormir",
+      "Sudadera gruesa",
+      "Forro polar",
+      "Chaqueta de abrigo",
+      "Chaqueta impermeable",
+      "Cortavientos",
+      "Ropa interior",
+      "Calcetines",
+      "Calcetines térmicos o gruesos",
+      "Pijama largo y abrigado",
+      "Gorro de invierno",
+      "Braga de cuello / buff",
+      "Zapatillas de senderismo",
+      "Sandalias",
+      "Chanclas de repuesto",
+      "Bañador / bikini",
+      "Gorra",
+      "Gafas de sol",
+      "Ropa de recambio",
+      "Bolsa para ropa mojada"
+    ]
+  },
+  {
+    "name": "Comodidad",
+    "icon": "🪑",
+    "items": [
+      "Sillas plegables",
+      "Mesa de camping",
+      "Manta de picnic",
+      "Toldo o sombrilla",
+      "Mochila pequeña",
+      "Mochila de senderismo",
+      "Navaja multiusos",
+      "Cuerda adicional",
+      "Bridas",
+      "Juegos de cartas",
+      "Libro / Kindle"
+    ]
+  },
+  {
+    "name": "Desayunos",
+    "icon": "🍳",
+    "items": [
+      "Huevos",
+      "Pan de molde",
+      "Pan tostado",
+      "Tortillas de trigo",
+      "Jamón serrano",
+      "Queso semicurado",
+      "Chorizo",
+      "Paté en latas pequeñas",
+      "Aguacates",
+      "Tomates",
+      "Mantequilla",
+      "Mermelada",
+      "Crema de cacahuete",
+      "Avena",
+      "Granola",
+      "Leche UHT en envases pequeños",
+      "Café",
+      "Té",
+      "Azúcar",
+      "Miel",
+      "Plátanos"
+    ]
+  },
+  {
+    "name": "Comidas y cenas",
+    "icon": "🍝",
+    "items": [
+      "Tortellini secos",
+      "Pasta",
+      "Pesto verde",
+      "Pesto rojo",
+      "Salsa de tomate",
+      "Arroz precocido",
+      "Fideos instantáneos",
+      "Ramen instantáneo",
+      "Fabada asturiana en lata",
+      "Lentejas con chorizo en conserva",
+      "Ravioli en conserva",
+      "Albóndigas en conserva",
+      "Atún en lata",
+      "Sardinas en lata",
+      "Caballa en conserva",
+      "Garbanzos cocidos",
+      "Alubias rojas cocidas",
+      "Maíz dulce",
+      "Guisantes en conserva",
+      "Pisto de verduras",
+      "Aceitunas",
+      "Pimientos asados en conserva",
+      "Tomates secos",
+      "Salsa de curry",
+      "Sopas instantáneas",
+      "Puré de patatas instantáneo",
+      "Tortillas de trigo adicionales"
+    ]
+  },
+  {
+    "name": "Picoteo",
+    "icon": "🥨",
+    "items": [
+      "Patatas fritas",
+      "Frutos secos",
+      "Crackers",
+      "Barritas energéticas",
+      "Galletas",
+      "Chocolate",
+      "Fruta deshidratada",
+      "Manzanas",
+      "Mandarinas",
+      "Fruta fresca adicional"
+    ]
+  },
+  {
+    "name": "Condimentos",
+    "icon": "🧂",
+    "items": [
+      "Aceite de oliva",
+      "Sal",
+      "Pimienta",
+      "Ajo en polvo",
+      "Pimentón",
+      "Especias favoritas",
+      "Kétchup",
+      "Mostaza",
+      "Mayonesa en sobres individuales",
+      "Salsa picante",
+      "Vinagre"
+    ]
+  },
+  {
+    "name": "Bebidas",
+    "icon": "🥤",
+    "items": [
+      "Agua potable suficiente para todos los días",
+      "Agua extra para cocinar",
+      "Agua extra para lavarse",
+      "Zumos",
+      "Refrescos",
+      "Bebidas isotónicas"
+    ]
+  },
+  {
+    "name": "Senderismo y playa",
+    "icon": "🥾",
+    "items": [
+      "Mochila",
+      "Botellas de agua para las rutas",
+      "Snacks para las rutas",
+      "Calzado de montaña",
+      "Bastones de senderismo",
+      "Mapas descargados sin conexión",
+      "Bolsa impermeable",
+      "Escarpines",
+      "Bolsa para recoger toda la basura"
+    ]
+  },
+  {
+    "name": "Coche, ferry y documentación",
+    "icon": "🚗",
+    "items": [
+      "DNI / pasaporte",
+      "NIE / TIE si corresponde",
+      "Billetes del ferry Fred. Olsen",
+      "Comprobar que SARA haya verificado la residencia",
+      "Certificado de residencia para viajes SOLO si SARA no verifica",
+      "Carnet de conducir",
+      "Documentación del coche",
+      "Tarjeta bancaria",
+      "Efectivo",
+      "Móvil",
+      "Depósito de combustible lleno",
+      "Rueda de repuesto o kit antipinchazos",
+      "Señalización de emergencia obligatoria",
+      "Mapas offline de La Gomera",
+      "Comprobar previsión meteorológica",
+      "Comprobar alertas por incendios",
+      "Confirmar zona autorizada para acampar",
+      "Confirmar si está permitido utilizar camping gas",
+      "Consultar condiciones del transporte de gas en el ferry"
+    ]
+  }
+];
+
+</script>
+<script>
+'use strict';
+
+// Shared camping packing list. No passwords/secret service keys in the client.
+// Supabase anonymous Auth + invite-code membership + RLS.
+(() => {
+  const $ = id => document.getElementById(id);
+  const LOCAL_ITEMS_KEY = 'la_gomera_local_items_v2';
+  const SESSION_KEY = 'la_gomera_shared_session_v2';
+  const VERSION = '2.1.0';
+  const STORAGE = {
+    get(key, fallback) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch { return fallback; } },
+    set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} }
+  };
+  const groups = window.CAMP_SEED || [];
+  // Datos iniciales para listas nuevas. Los datos existentes viven en Supabase.
+  const oldTent = groups.find(g=>g.name==='Tienda y descanso');
+  if (oldTent) {
+    const extras = [
+      'ITV vigente','Seguro del Land Rover en vigor','Documentación del vehículo',
+      'Comprobar funcionamiento del techo elevable','Revisar cierre y juntas del techo',
+      'Comprobar bisagras y soportes del techo','Lona del techo sin roturas ni filtraciones',
+      'Colchón de techo y funda','Escalera de acceso al techo','Mosquitera y ventilación del techo',
+      'Comprobar luces (cortas, largas, frenos e intermitentes)','Estado y presión de neumáticos',
+      'Rueda de repuesto, gato y llave de ruedas','Aceite del motor','Refrigerante',
+      'Líquido de frenos y limpiaparabrisas','Batería y arranque','Frenos',
+      'Comprobar posibles fugas de combustible o aceite','Herramientas básicas',
+      'Triángulos o baliza V16 homologada','Chalecos reflectantes','Cables de arranque',
+      'Extintor pequeño','Depósito lleno antes de salir','Llaves de repuesto',
+      'Comprobar altura del vehículo para el ferry','Comprobar sujeción del equipaje'
+    ];
+    oldTent.name='Land Rover';oldTent.icon='🚙';oldTent.items=extras;
+    groups.splice(1,0,{name:'Descanso',icon:'🛏️',items:[
+      'Colchón hinchable o esterillas aislantes','Inflador',
+      'Sacos de dormir adecuados para noches frías','Almohadas',
+      'Mantas adicionales','Sábana','Kit de reparación del colchón',
+      'Tapones para los oídos','Antifaz para dormir'
+    ]});
+  }
+  const icons = Object.fromEntries(groups.map(g => [g.name, g.icon]));
+  const baseItems = groups.flatMap((g, gi) => g.items.map((title, ix) => ({
+    id: `local-${gi}-${ix}`, title, category: g.name, assigned_to: 'Ambos', checked: false,
+    checked_by: null, sort_order: gi * 1000 + ix
+  })));
+  const savedSession = STORAGE.get(SESSION_KEY, {});
+  const state = {
+    cloud: false, db: null, listId: null, inviteCode: null, person: savedSession.person || 'Paulina',
+    items: [], categories: [], editingId: null, filter: 'all', search: '', opened: new Set(groups.slice(0, 2).map(g => g.name)),
+    busy: new Set(), interval: null, realtime: null, refreshTimer: null, toastTimer: null
+  };
+  const cfg = window.CAMP_CONFIG || {};
+  const isConfigured = /^https:\/\/[\w.-]+\.supabase\.co\/?$/.test((cfg.url || '').trim()) &&
+    /^(sb_publishable_|eyJ)/.test((cfg.publishableKey || '').trim());
+
+  function notify(message) {
+    const box = $('toast'); clearTimeout(state.toastTimer);
+    box.textContent = message; box.classList.add('visible');
+    state.toastTimer = setTimeout(() => box.classList.remove('visible'), 3500);
+  }
+  function notice(message) { const el = $('notice'); el.hidden = !message; el.textContent = message || ''; }
+  function syncStatus(message, status = '') { const el = $('syncStatus'); el.textContent = message; el.className = 'sync-chip ' + status; }
+  function saveSession() { STORAGE.set(SESSION_KEY, { person: state.person, listId: state.listId, inviteCode: state.inviteCode }); }
+  function inviteFromURL() {
+    const value = new URLSearchParams(location.hash.replace(/^#/, '')).get('lista');
+    return /^[a-f0-9]{64}$/.test(value || '') ? value : null;
+  }
+  function invitationURL() {
+    if (!state.inviteCode || !/^https?:$/.test(location.protocol)) return null;
+    const url = new URL(location.href);
+    url.hash = 'lista=' + state.inviteCode;
+    return url.toString();
+  }
+  function setScreen(which) {
+    $('welcome').hidden = which !== 'welcome';
+    $('workspace').hidden = which !== 'workspace';
+  }
+  function showWelcome() {
+    const invited = Boolean(inviteFromURL());
+    $('welcomeDescription').textContent = invited
+      ? 'Te han invitado a preparar juntos la aventura. Elige tu nombre para entrar.'
+      : 'Una sola lista para los dos, siempre sincronizada. Elige quién eres para crearla.';
+    $('joinManual').hidden = invited;
+    setScreen('welcome');
+  }
+  function saveLocal() { STORAGE.set(LOCAL_ITEMS_KEY, state.items); }
+  function localMode() {
+    state.cloud = false;
+    const existing = STORAGE.get(LOCAL_ITEMS_KEY, null);
+    state.items = Array.isArray(existing) ? existing : structuredClone(baseItems);
+    state.categories=groups.map((g,i)=>({name:g.name,icon:g.icon,sort_order:i}));
+    saveLocal(); setScreen('workspace');
+    syncStatus('● Vista local', 'offline');
+    notice('Vista de prueba: puedes marcar, añadir y editar. Para compartir la lista y guardar los cambios en la nube, configura Supabase (consulta INSTRUCCIONES.md).');
+    $('shareBtn').textContent = '↗ Activar compartir';
+    render();
+  }
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script'); s.src = src;
+      s.onload = resolve; s.onerror = () => reject(new Error('No se ha podido cargar Supabase. Comprueba Internet.'));
+      document.head.appendChild(s);
+    });
+  }
+  async function bootstrapCloud() {
+    syncStatus('Conectando…');
+    await loadScript('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2');
+    if (!window.supabase?.createClient) throw new Error('No se pudo iniciar Supabase.');
+    state.db = window.supabase.createClient(cfg.url.trim(), cfg.publishableKey.trim(), {
+      auth: { persistSession: true, autoRefreshToken: true }
+    });
+    let { data: { session }, error } = await state.db.auth.getSession();
+    if (error) throw error;
+    if (!session) {
+      const response = await state.db.auth.signInAnonymously();
+      if (response.error) throw new Error('Activa Anonymous Sign-Ins en Supabase: ' + response.error.message);
+      session = response.data.session;
+    }
+    if (!session) throw new Error('No se pudo iniciar sesión anónima.');
+    state.cloud = true;
+    const invited = inviteFromURL();
+    // When returning to a saved list, membership is already stored in the database.
+    if (savedSession.listId && (!invited || savedSession.inviteCode === invited)) {
+      state.listId = savedSession.listId;
+      state.inviteCode = savedSession.inviteCode;
+      try { await openCloudList(); return; }
+      catch (err) { state.listId = null; console.warn('La lista guardada no está accesible:', err.message); }
+    }
+    showWelcome();
+    syncStatus('● Cuenta conectada', 'online');
+  }
+  async function chooseRole(person) {
+    if (!state.cloud || state.busy.has('setup')) return;
+    state.busy.add('setup');
+    state.person = person;
+    document.querySelectorAll('.role-choice').forEach(el => el.disabled = true);
+    try {
+      let id, code = inviteFromURL();
+      if (code) {
+        const response = await state.db.rpc('camp_join_list', { p_code: code, p_person: person });
+        if (response.error) throw response.error;
+        id = response.data;
+      } else {
+        const response = await state.db.rpc('camp_create_list', {
+          p_person: person,
+          p_seed: baseItems.map(({ title, category }) => ({ title, category }))
+        });
+        if (response.error) throw response.error;
+        if (!response.data?.length) throw new Error('No se ha creado la lista.');
+        id = response.data[0].list_id;
+        code = response.data[0].invite_code;
+      }
+      state.listId = id; state.inviteCode = code;
+      saveSession();
+      await openCloudList();
+      notify(code && inviteFromURL() ? '¡Ya estáis en la misma lista! 🎉' : 'Lista creada. ¡Comparte el enlace!');
+    } catch (err) {
+      syncStatus('Error de conexión', 'offline');
+      notify('Error: ' + (err.message || err));
+      notice('No se ha podido crear o abrir la lista. Comprueba que ejecutaste supabase.sql y que activaste Anonymous Sign-Ins. Detalles: ' + (err.message || err));
+    } finally {
+      state.busy.delete('setup');
+      document.querySelectorAll('.role-choice').forEach(el => el.disabled = false);
+    }
+  }
+  async function joinByCode() {
+    const code = $('joinCode').value.trim().toLowerCase();
+    if (!/^[a-f0-9]{64}$/.test(code)) return notify('El código debe tener 64 caracteres.');
+    location.hash = 'lista=' + code;
+    showWelcome();
+    notify('Ahora elige tu nombre para unirte.');
+  }
+  async function openCloudList() {
+    const { data, error } = await state.db.from('camp_lists').select('invite_code').eq('id', state.listId).single();
+    if (error || !data) throw error || new Error('Lista no encontrada');
+    state.inviteCode = data.invite_code;
+    saveSession();
+    await refreshCloud();
+    subscribeCloud();
+    setScreen('workspace');
+    notice('');
+    syncStatus('● Lista compartida', 'online');
+    $('shareBtn').textContent = '↗ Compartir enlace';
+    render();
+  }
+  async function refreshCloud() {
+    if (!state.cloud || !state.listId || state.busy.has('refresh')) return;
+    state.busy.add('refresh');
+    try {
+      const response = await state.db.from('camp_items')
+        .select('id, title, category, assigned_to, checked, checked_by, sort_order')
+        .eq('list_id', state.listId).order('sort_order', { ascending: true }).order('created_at');
+      if (response.error) throw response.error;
+      state.items = response.data || [];
+      const catResult = await state.db.from('camp_categories').select('name,icon,sort_order').eq('list_id',state.listId).order('sort_order');
+      if (catResult.error) throw catResult.error;
+      state.categories = catResult.data || [];
+      for (const c of state.categories) icons[c.name] = c.icon;
+      render();
+      if ($('notice').textContent.includes('conexión con la nube')) notice('');
+    } catch (err) {
+      syncStatus('Sin sincronizar', 'offline');
+      notice('Problema de conexión con la nube: ' + err.message + '. Los cambios fallidos no se guardan.');
+    } finally { state.busy.delete('refresh'); }
+  }
+  function scheduleRefresh() {
+    if (state.refreshTimer) clearTimeout(state.refreshTimer);
+    state.refreshTimer = setTimeout(() => refreshCloud(), 280);
+  }
+  function subscribeCloud() {
+    if (state.realtime) state.db.removeChannel(state.realtime);
+    if (state.interval) clearInterval(state.interval);
+    state.realtime = state.db.channel('camp-list-' + state.listId)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'camp_items', filter: 'list_id=eq.' + state.listId }, scheduleRefresh)
+      .subscribe(status => {
+        if (status === 'SUBSCRIBED') syncStatus('● En directo', 'online');
+        else if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT') syncStatus('↻ Sincronización periódica', 'offline');
+      });
+    // Automatic fallback if a Realtime event is missed or the other phone reconnects.
+    state.interval = setInterval(() => { if (!document.hidden) refreshCloud(); }, 20000);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) scheduleRefresh(); });
+    window.addEventListener('online', scheduleRefresh);
+  }
+  function updateProgress() {
+    const total = state.items.length;
+    const done = state.items.filter(x => x.checked).length;
+    $('progressLabel').textContent = `${done} de ${total} preparados`;
+    $('progressPercent').textContent = `${total ? Math.round(done / total * 100) : 0} %`;
+    $('progressFill').style.width = `${total ? done / total * 100 : 0}%`;
+    const paulina = state.items.filter(x => x.checked && x.checked_by === 'Paulina').length;
+    const nestor = state.items.filter(x => x.checked && x.checked_by === 'Néstor').length;
+    $('paulinaCount').textContent = paulina;
+    $('nestorCount').textContent = nestor;
+  }
+  function categorySort(a, b) {
+    const all = state.categories.length ? state.categories.map(x => x.name) : groups.map(x => x.name);
+    const ia = all.indexOf(a), ib = all.indexOf(b);
+    return (ia === -1 ? all.length : ia) - (ib === -1 ? all.length : ib) || a.localeCompare(b, 'es');
+  }
+  function labelForPerson(person) { return person === 'Paulina' ? '🌼 Paulina' : '🧭 Néstor'; }
+  function render() {
+    $('meBadge').textContent = labelForPerson(state.person);
+    updateProgress();
+    const q = state.search.toLocaleLowerCase('es');
+    const visible = state.items.filter(item => {
+      if (state.filter === 'done' && !item.checked) return false;
+      if (state.filter === 'todo' && item.checked) return false;
+      if (state.filter === 'mine' && item.assigned_to !== 'Ambos' && item.assigned_to !== state.person) return false;
+      return item.title.toLocaleLowerCase('es').includes(q) || item.category.toLocaleLowerCase('es').includes(q);
+    });
+    const categories = [...new Set([...visible.map(x => x.category), ...(state.filter === 'all' && !q ? state.categories.map(x=>x.name) : [])])].sort(categorySort);
+    const parent = $('categoryGroups');
+    const frag = document.createDocumentFragment();
+    for (const category of categories) {
+      const items = visible.filter(x => x.category === category).sort((a,b) => a.sort_order - b.sort_order || a.title.localeCompare(b.title, 'es'));
+      const allItems = state.items.filter(x => x.category === category);
+      const completed = allItems.filter(x => x.checked).length;
+      const block = document.createElement('details');
+      block.className = 'category';
+      block.open = Boolean(q || state.filter !== 'all' || state.opened.has(category));
+      block.addEventListener('toggle', () => {
+        if (block.open) state.opened.add(category); else state.opened.delete(category);
+      });
+      const head = document.createElement('summary');
+      const left = document.createElement('div'); left.className = 'category-heading';
+      const icon = document.createElement('span'); icon.className = 'category-icon'; icon.textContent = icons[category] || '🧾';
+      const title = document.createElement('span'); title.className = 'category-name'; title.textContent = category;
+      left.append(icon, title);
+      const count = document.createElement('span'); count.className = 'category-counter'; count.textContent = `${completed} / ${allItems.length}`;
+      head.append(left, count); block.append(head);
+      const body = document.createElement('div'); body.className = 'category-items';
+      for (const item of items) {
+        const row = document.createElement('div'); row.className = 'packing-item' + (item.checked ? ' checked' : '');
+        const input = document.createElement('input'); input.type = 'checkbox'; input.className = 'check'; input.checked = !!item.checked;
+        input.disabled = state.busy.has(item.id); input.id = 'c-' + item.id;
+        input.setAttribute('aria-label', 'Preparado: ' + item.title);
+        input.addEventListener('change', () => updateItem(item, { checked: input.checked, checked_by: input.checked ? state.person : null }));
+        const label = document.createElement('label'); label.className = 'item-main'; label.htmlFor = input.id;
+        const name = document.createElement('div'); name.className = 'item-title'; name.textContent = item.title;
+        const meta = document.createElement('div'); meta.className = 'item-meta' + (item.assigned_to !== 'Ambos' ? ' assigned' : '');
+        if (item.assigned_to !== 'Ambos') meta.textContent = labelForPerson(item.assigned_to);
+        else if (item.checked_by) meta.textContent = `✓ ${item.checked_by}`;
+        else meta.textContent = '👫 Para los dos';
+        label.append(name, meta);
+        const edit = document.createElement('button'); edit.type = 'button'; edit.className = 'item-edit'; edit.textContent = '✎';
+        edit.title = 'Editar artículo'; edit.setAttribute('aria-label', 'Editar ' + item.title);
+        edit.addEventListener('click', () => openItemDialog(item));
+        row.append(input,label,edit); body.append(row);
+      }
+      const addHere = document.createElement('button');
+      addHere.type='button'; addHere.className='button-secondary section-add';
+      addHere.textContent='＋ Añadir punto a esta sección';
+      addHere.addEventListener('click',()=>openItemDialog(null,category));
+      body.append(addHere);
+      block.append(body); frag.append(block);
+    }
+    if (!visible.length) {
+      const empty = document.createElement('div'); empty.className = 'empty';
+      const heading = document.createElement('strong'); heading.textContent = state.items.length ? '¡No hay artículos con ese filtro!' : 'Lista vacía';
+      empty.append(heading, document.createTextNode(' Puedes cambiar el filtro o añadir algo nuevo.'));
+      frag.append(empty);
+    }
+    parent.replaceChildren(frag);
+  }
+  async function updateItem(item, changes) {
+    if (state.busy.has(item.id)) return;
+    const original = { ...item };
+    state.busy.add(item.id);
+    Object.assign(item, changes); render();
+    try {
+      if (state.cloud) {
+        const { data, error } = await state.db.from('camp_items')
+          .update({ ...changes, updated_at: new Date().toISOString() })
+          .eq('list_id', state.listId).eq('id', item.id).select('id');
+        if (error) throw error;
+        if (!data?.length) throw new Error('El artículo ya no existe o no tienes permiso.');
+        scheduleRefresh();
+      } else saveLocal();
+    } catch (err) {
+      Object.assign(item, original); notify('No se guardó: ' + err.message); render();
+      return false;
+    } finally { state.busy.delete(item.id); render(); }
+    return true;
+  }
+  function openItemDialog(item = null, chosenCategory = '') {
+    state.editingId = item?.id || null;
+    $('modalTitle').textContent = item ? 'Editar artículo' : 'Añadir artículo';
+    $('itemName').value = item?.title || '';
+    $('itemCategory').value = item?.category || chosenCategory || '';
+    $('itemAssignee').value = item?.assigned_to || 'Ambos';
+    $('deleteBtn').hidden = !item;
+    const opts = [...new Set([...groups.map(g => g.name), ...state.categories.map(x=>x.name), ...state.items.map(x => x.category)])].sort(categorySort);
+    const frag = document.createDocumentFragment();
+    for (const name of opts) { const opt = document.createElement('option'); opt.value = name; frag.append(opt); }
+    $('categoriesDatalist').replaceChildren(frag);
+    $('itemDialog').showModal();
+    $('itemName').focus();
+  }
+  async function submitItem(event) {
+    event.preventDefault();
+    const title = $('itemName').value.trim();
+    const category = $('itemCategory').value.trim();
+    const assigned_to = $('itemAssignee').value;
+    if (!title || !category || title.length > 160 || category.length > 80) return notify('Completa nombre y categoría.');
+    if (!['Ambos', 'Paulina', 'Néstor'].includes(assigned_to)) return;
+    const submit = $('itemForm').querySelector('button[type="submit"]'); submit.disabled = true;
+    try {
+      if (state.editingId) {
+        const item = state.items.find(x => x.id === state.editingId);
+        if (!item) throw new Error('Artículo no encontrado');
+        const saved = await updateItem(item, { title, category, assigned_to });
+        if (!saved) throw new Error('La edición no se ha guardado.');
+      } else {
+        const payload = { title, category, assigned_to, checked: false, sort_order: Math.max(0, ...state.items.map(x=>x.sort_order || 0)) + 1 };
+        if (state.cloud) {
+          const response = await state.db.from('camp_items').insert({ list_id: state.listId, ...payload }).select('id').single();
+          if (response.error) throw response.error;
+          await refreshCloud();
+        } else {
+          state.items.push({ id: (globalThis.crypto?.randomUUID?.() || `local-${Date.now()}-${Math.random().toString(16).slice(2)}`), ...payload, checked_by: null });
+          saveLocal(); render();
+        }
+        state.opened.add(category);
+      }
+      $('itemDialog').close();
+      render(); notify(state.editingId ? 'Artículo actualizado ✓' : 'Artículo añadido ✓');
+    } catch (err) { notify('No se pudo guardar: ' + err.message); }
+    finally { submit.disabled = false; }
+  }
+  async function createSection(event) {
+    event.preventDefault();
+    const name=$('sectionName').value.trim(), icon=$('sectionIcon').value.trim()||'📋';
+    if(!name || name.length>80) return notify('Escribe un nombre válido.');
+    if([...state.categories.map(c=>c.name),...state.items.map(x=>x.category)].some(x=>x.toLocaleLowerCase('es')===name.toLocaleLowerCase('es'))) return notify('Esa sección ya existe.');
+    const submit=$('sectionForm').querySelector('[type=submit]');submit.disabled=true;
+    try {
+      if(state.cloud) {
+        const {error}=await state.db.from('camp_categories').insert({list_id:state.listId,name,icon,sort_order:state.categories.length+100});
+        if(error) throw error;
+        await refreshCloud();
+      } else {
+        state.categories.push({name,icon,sort_order:state.categories.length+100});
+        icons[name]=icon;render();
+      }
+      state.opened.add(name);
+      state.filter='all';state.search='';$('searchInput').value='';
+      document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x.dataset.filter==='all'));
+      $('sectionDialog').close();render();notify('Sección creada ✓');
+    }catch(e){notify('No se pudo crear: '+e.message)} finally {submit.disabled=false}
+  }
+  async function deleteItem() {
+    const item = state.items.find(x => x.id === state.editingId);
+    if (!item) return;
+    if (!confirm(`¿Eliminar «${item.title}» de la lista compartida?`)) return;
+    $('deleteBtn').disabled = true;
+    try {
+      if (state.cloud) {
+        const response = await state.db.from('camp_items').delete().eq('list_id', state.listId).eq('id', item.id).select('id');
+        if (response.error) throw response.error;
+        if (!response.data?.length) throw new Error('No se ha podido eliminar.');
+      }
+      state.items = state.items.filter(x => x.id !== item.id);
+      if (state.cloud) scheduleRefresh(); else saveLocal();
+      $('itemDialog').close(); render(); notify('Artículo eliminado.');
+    } catch (err) { notify('No se pudo eliminar: ' + err.message); }
+    finally { $('deleteBtn').disabled = false; }
+  }
+  async function shareList() {
+    const url = invitationURL();
+    if (!url) {
+      if (state.cloud) notify('Publica primero esta carpeta en un sitio HTTPS, como GitHub Pages.');
+      else $('helpBtn').click();
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      notify('Enlace privado copiado. Envíalo a Néstor por WhatsApp.');
+    } catch {
+      window.prompt('Copia y envía este enlace privado a Néstor:', url);
+    }
+  }
+  function exportBackup() {
+    const payload = {
+      app: 'La Gomera – Paulina + Néstor', version: VERSION,
+      exportedAt: new Date().toISOString(), items: state.items
+    };
+    const blob = new Blob([JSON.stringify(payload,null,2)], {type:'application/json;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a'); link.href = url;
+    link.download = `la-gomera-backup-${new Date().toISOString().slice(0,10)}.json`;
+    document.body.append(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+    notify('Copia de seguridad descargada ✓');
+  }
+  function showHelp() {
+    const body = $('infoText'); body.replaceChildren();
+    const lines = state.cloud ? [
+      '☁️ Los cambios se guardan en Supabase y se sincronizan entre vuestros dispositivos.',
+      '🔗 Pulsa «Compartir enlace» y envíaselo a Néstor. Al abrirlo, él elige su nombre y entra en la misma lista.',
+      '➕ Podéis crear nuevas secciones y añadir, editar, borrar y asignar puntos a Paulina, Néstor o ambos.',
+      '🔐 El enlace incluye un código privado: no lo publiques. Si cambias de móvil o borras datos del navegador, abre de nuevo ese enlace para recuperar la lista.',
+      '💾 Puedes descargar una copia JSON para guardar tus datos.'
+    ] : [
+      '📱 Esta versión funciona localmente y guarda cambios en este navegador. Todavía NO se sincroniza con Néstor.',
+      '☁️ Para compartirla por Internet hace falta crear un proyecto Supabase, activar accesos anónimos, ejecutar supabase.sql, rellenar config.js y publicar los archivos en GitHub Pages.',
+      '📄 Tienes las instrucciones paso a paso en INSTRUCCIONES.md.',
+      '💾 Puedes descargar una copia JSON de lo que hayas marcado en la vista local.'
+    ];
+    for (const line of lines) { const p = document.createElement('p'); p.textContent = line; body.append(p); }
+    $('infoDialog').showModal();
+  }
+  document.querySelectorAll('.role-choice').forEach(button => button.addEventListener('click', () => chooseRole(button.dataset.role)));
+  $('joinByCode').addEventListener('click', joinByCode);
+  $('addBtn').addEventListener('click', () => openItemDialog());
+  $('addSectionBtn').addEventListener('click',()=>{$('sectionName').value='';$('sectionIcon').value='📋';$('sectionDialog').showModal();$('sectionName').focus()});
+  $('sectionForm').addEventListener('submit',createSection);
+  $('closeSection').addEventListener('click',()=>$('sectionDialog').close());
+  $('cancelSection').addEventListener('click',()=>$('sectionDialog').close());
+  $('itemForm').addEventListener('submit', submitItem);
+  $('closeModal').addEventListener('click', () => $('itemDialog').close());
+  $('cancelBtn').addEventListener('click', () => $('itemDialog').close());
+  $('deleteBtn').addEventListener('click', deleteItem);
+  $('shareBtn').addEventListener('click', shareList);
+  $('exportBtn').addEventListener('click', exportBackup);
+  $('searchInput').addEventListener('input', e => { state.search = e.target.value; render(); });
+  document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach(x => x.classList.remove('active'));
+    button.classList.add('active'); state.filter = button.dataset.filter; render();
+  }));
+  $('helpBtn').addEventListener('click', showHelp);
+  $('closeInfo').addEventListener('click', () => $('infoDialog').close());
+  $('closeInfoBottom').addEventListener('click', () => $('infoDialog').close());
+  if (isConfigured) {
+    bootstrapCloud().catch(err => {
+      syncStatus('Error de conexión', 'offline');
+      notice('No se pudo conectar a la nube: ' + err.message + '. Comprueba la configuración en config.js y la conexión a Internet.');
+      showWelcome();
+      document.querySelectorAll('.role-choice').forEach(x => x.disabled = true);
+    });
+  } else localMode();
+})();
+
+</script>
+</body>
+</html>
