@@ -1,598 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Everyday Automated — automations, data tools and AI systems for work and life." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Everyday Automated — practical automation, AI, data systems and useful technology for work and life.">
   <title>Everyday Automated</title>
-  <style>
-    :root{
-      --bg:#0b0d12;--surface:#131720;--surface2:#171c27;--text:#f7f8fb;
-      --muted:#99a3b3;--line:rgba(255,255,255,.09);--accent:#8bffcf;--max:1120px;
-    }
-    *{box-sizing:border-box}html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
-    a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
-    header{position:sticky;top:0;z-index:20;background:rgba(11,13,18,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    .nav{height:66px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;letter-spacing:-.035em}.brand span{color:var(--accent)}
-    nav{display:flex;gap:24px}nav a{font-size:14px;color:var(--muted)}nav a:hover{color:var(--text)}
-    .hero{padding:96px 0 78px}.hero-inner{max-width:850px}.eyebrow,.label{font-size:12px;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.13em}
-    .eyebrow{margin-bottom:18px}h1{font-size:clamp(52px,8vw,92px);line-height:.96;letter-spacing:-.065em;margin:0 0 24px}.hero p{max-width:660px;color:var(--muted);font-size:19px;line-height:1.55;margin:0 0 30px}
-    .buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border:1px solid var(--line);border-radius:11px;font-weight:750;font-size:13px;transition:.18s ease}.btn:hover{border-color:rgba(255,255,255,.22);transform:translateY(-1px)}.primary{background:var(--accent);color:#07100c;border-color:var(--accent)}
-    section{padding:68px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.label{margin-bottom:9px}h2{font-size:clamp(32px,5vw,50px);letter-spacing:-.045em;margin:0}.section-head p{max-width:450px;color:var(--muted);margin:0;line-height:1.5}
-
-    .capabilities{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.capability{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;min-height:210px}.capability h3{font-size:19px;letter-spacing:-.025em;margin:0 0 10px}.capability p{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 16px}.mini{display:grid;gap:7px}.mini span{font-size:12px;color:#d2d7df}.mini span::before{content:"→";color:var(--accent);margin-right:7px}
-
-    .projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.project-card{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:18px;display:flex;flex-direction:column;min-height:310px;overflow:hidden}.project-card:hover{border-color:rgba(139,255,207,.25)}.project-category{font-size:11px;text-transform:uppercase;letter-spacing:.11em;color:var(--accent);font-weight:800;margin-bottom:14px}.project-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.project-card h3{font-size:25px;letter-spacing:-.035em;margin:0}.state{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);border:1px solid rgba(139,255,207,.25);border-radius:999px;padding:5px 7px}.project-copy{font-size:14px;color:var(--muted);line-height:1.55;margin:14px 0 16px}.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}.stack span{border:1px solid var(--line);border-radius:999px;padding:5px 7px;font-size:10px;color:#c8cfda}.project-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.btn.disabled{opacity:.4;pointer-events:none}.view-project{cursor:pointer;background:transparent;color:var(--text)}
-    .project-preview{margin:-2px -2px 18px;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;background:#090d14}.browser-bar{height:31px;display:flex;align-items:center;gap:6px;padding:0 11px;border-bottom:1px solid rgba(255,255,255,.07);background:#111620}.browser-dot{width:7px;height:7px;border-radius:50%;background:#4d5564}.browser-url{margin-left:6px;font-size:9px;color:#6f7888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.seismic-ui,.tourism-ui{position:relative;height:190px;overflow:hidden;background:#080c12}.seismic-cover,.tourism-cover{display:block;width:100%;height:100%;object-fit:cover}.seismic-cover{object-position:center}.tourism-cover{object-position:center top}.seismic-ui::after,.tourism-ui::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,9,15,.04),rgba(5,9,15,.22));box-shadow:inset 0 0 36px rgba(0,0,0,.3)}.preview-label{position:absolute;z-index:1;right:10px;top:10px;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:#d4dde7;background:rgba(7,12,19,.7);border:1px solid rgba(255,255,255,.14);padding:5px 7px;border-radius:999px;backdrop-filter:blur(7px)}.architecture-line{margin:2px 0 16px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02);font-size:11px;color:#c8cfda;line-height:1.45}.architecture-line strong{color:var(--text)}
-    .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,6,10,.78);backdrop-filter:blur(8px)}.modal.open{display:flex}.modal-card{width:min(820px,100%);max-height:86vh;overflow:auto;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:26px}.modal-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.modal-head h3{font-size:30px;letter-spacing:-.04em;margin:4px 0 0}.close{border:1px solid var(--line);background:transparent;color:var(--text);width:38px;height:38px;border-radius:10px;font-size:20px;cursor:pointer}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}.detail-block{border-top:1px solid var(--line);padding-top:16px}.detail-block h4{font-size:13px;margin:0 0 10px}.detail-block p,.detail-block li{font-size:13px;color:var(--muted);line-height:1.55}.detail-block ul{margin:0;padding-left:18px;display:grid;gap:6px}.checks{display:grid;gap:10px}.check{font-size:13px;color:var(--muted);line-height:1.45}.check::before{content:"✓";color:var(--accent);font-weight:900;margin-right:8px}
-
-    .custom{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.custom p{font-size:18px;color:var(--muted);line-height:1.6;margin:5px 0 0}.tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tech span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:12px;color:var(--muted)}
-    .contact{display:flex;align-items:center;justify-content:space-between;gap:28px}.contact p{color:var(--muted);margin:9px 0 0}footer{padding:26px 0;color:var(--muted);font-size:13px}.footer{display:flex;justify-content:space-between;gap:20px}
-    @media(max-width:1000px){.capabilities{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:1fr}}
-    @media(max-width:680px){.seismic-ui,.tourism-ui{height:175px}nav{display:none}.hero{padding:74px 0 58px}.section-head,.contact{align-items:flex-start;flex-direction:column}.capabilities,.custom{grid-template-columns:1fr}.custom{gap:22px}.footer{flex-direction:column;gap:5px}.project-card h3{font-size:23px}.detail-grid{grid-template-columns:1fr}.modal{padding:12px}.modal-card{padding:20px}}
-  
-    /* PROJECT EXPANSION */
-    .projects-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .project-card{min-height:430px}
-    .state.active{color:#ffd38b;border-color:rgba(255,211,139,.28)}
-    .state.prototype{color:#b8c7ff;border-color:rgba(184,199,255,.28)}
-    .project-preview.compact .browser-url{color:#7f8998}
-    .mock-ui{height:160px;position:relative;overflow:hidden;background:linear-gradient(180deg,#0d121b,#090d14);padding:14px}
-    .mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#798495}
-    .mock-pill{border:1px solid rgba(139,255,207,.22);color:#9fffd7;border-radius:999px;padding:4px 6px;background:rgba(139,255,207,.04)}
-    .mock-panel{border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.025);padding:10px}
-    .mock-line{height:6px;border-radius:999px;background:#27303d;margin:6px 0}.mock-line.short{width:42%}.mock-line.mid{width:67%}.mock-line.accent{background:rgba(139,255,207,.35)}
-    .map-mock{display:grid;grid-template-columns:84px 1fr;gap:9px;height:113px}.map-side{display:grid;gap:6px}.map-tile{border:1px solid rgba(255,255,255,.08);border-radius:7px;padding:6px;font-size:7px;color:#aeb7c4;background:#121823}.map-canvas{position:relative;border:1px solid rgba(255,255,255,.07);border-radius:9px;background:radial-gradient(circle at 62% 43%,rgba(139,255,207,.08),transparent 25%),#0a1017}.island{position:absolute;height:9px;background:#2d3945;border:1px solid #596777;border-radius:60%}.island.i1{width:34px;left:20%;top:54%}.island.i2{width:26px;left:38%;top:47%}.island.i3{width:42px;left:55%;top:51%}.island.i4{width:24px;left:76%;top:39%}.map-pin{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(139,255,207,.09)}.map-pin.p1{left:61%;top:45%}.map-pin.p2{left:31%;top:59%}
-    .anki-card{height:105px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.anki-word{font-size:23px;font-weight:800;letter-spacing:-.03em}.anki-example{font-size:9px;color:#99a3b3;margin-top:7px;max-width:86%;line-height:1.45}.anki-tools{display:flex;gap:5px;justify-content:center;margin-top:9px}.anki-tools span{font-size:7px;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:4px 6px;color:#aeb7c4}
-    .chat-mock{display:grid;gap:7px}.bubble{max-width:84%;font-size:8px;line-height:1.45;padding:7px 8px;border-radius:9px;border:1px solid rgba(255,255,255,.07);color:#c6ced8}.bubble.user{margin-left:auto;background:#151d29}.bubble.ai{background:rgba(139,255,207,.05);border-color:rgba(139,255,207,.12)}.sources{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px}.sources span{font-size:7px;color:#92a0b1;border:1px solid rgba(255,255,255,.07);border-radius:999px;padding:3px 5px}
-    .pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;align-items:center;height:103px}.node{text-align:center;font-size:7px;color:#b8c1cc;padding:9px 3px;border-radius:8px;border:1px solid rgba(255,255,255,.08);background:#121823;position:relative}.node:not(:last-child)::after{content:"→";position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:#536071}.node.review{border-color:rgba(139,255,207,.22);color:#aefbdd}
-    .sales-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}.sales-kpi{border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:7px}.sales-kpi span{display:block;font-size:6px;color:#7f8998;text-transform:uppercase}.sales-kpi strong{display:block;margin-top:3px;font-size:11px}.bars{height:55px;display:flex;align-items:end;gap:5px;padding:6px 7px;border:1px solid rgba(255,255,255,.07);border-radius:8px}.bar{flex:1;background:#293441;border-radius:3px 3px 0 0}.bar.hot{background:rgba(139,255,207,.5)}
-    .project-note{font-size:10px;color:#7d8898;margin-top:10px}
-    @media(max-width:1050px){.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:680px){.projects-grid{grid-template-columns:1fr}.project-card{min-height:auto}.mock-ui{height:155px}}
-
-  
-    /* NOTES / EDITORIAL */
-    .notes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .note-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;min-height:230px;display:flex;flex-direction:column}
-    .note-card:hover{border-color:rgba(139,255,207,.25)}
-    .note-meta{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:800;margin-bottom:18px}
-    .note-card h3{font-size:22px;line-height:1.1;letter-spacing:-.03em;margin:0 0 12px}
-    .note-card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 16px}
-    .note-foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:#9fa9b7}
-    @media(max-width:1000px){.notes-grid{grid-template-columns:1fr}}
-
-  
-    /* FRONTIER + PRACTICAL */
-    .frontier-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-    .frontier-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:18px;display:flex;flex-direction:column;min-height:280px}
-    .frontier-card:hover{border-color:rgba(139,255,207,.28);transform:translateY(-1px)}
-    .frontier-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:800;margin-bottom:18px}
-    .frontier-date{font-size:10px;color:#748092;margin-left:8px}
-    .frontier-card h3{font-size:21px;line-height:1.12;letter-spacing:-.03em;margin:0 0 12px}
-    .frontier-card p{font-size:12.5px;line-height:1.58;color:var(--muted);margin:0 0 16px}
-    .frontier-link{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--accent);font-weight:800}
-    .practical-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
-    .practical-card{border:1px solid var(--line);border-radius:14px;padding:17px;background:rgba(255,255,255,.018)}
-    .practical-card h3{font-size:17px;margin:0 0 8px;letter-spacing:-.02em}
-    .practical-card p{font-size:12px;color:var(--muted);line-height:1.55;margin:0}
-    .practical-card .mini-tag{display:inline-block;margin-bottom:10px;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#a9b4c2}
-    @media(max-width:1050px){.frontier-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:760px){.frontier-grid,.practical-grid{grid-template-columns:1fr}}
-
-  
-    /* REAL SITE STRUCTURE + PROJECT GROUPS */
-    .site-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .site-pillar{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;min-height:180px}
-    .site-pillar h3{font-size:19px;margin:0 0 10px;letter-spacing:-.025em}
-    .site-pillar p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
-    .project-group{margin-top:42px}
-    .project-group:first-of-type{margin-top:0}
-    .project-group-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-    .project-group-head h3{font-size:23px;letter-spacing:-.03em;margin:0}
-    .project-group-head p{font-size:12px;color:var(--muted);margin:0;max-width:460px;text-align:right;line-height:1.5}
-    .photo-ui,.gomera-ui,.vlc-ui{height:160px;padding:14px;background:linear-gradient(180deg,#0d121b,#090d14)}
-    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;height:104px}.photo-tile{border-radius:8px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,#1b2430,#293544);position:relative;overflow:hidden}.photo-tile::after{content:"";position:absolute;inset:auto 8px 8px;height:5px;border-radius:999px;background:rgba(255,255,255,.13)}.photo-tools{display:flex;gap:5px;margin-top:8px}.photo-tools span{font-size:7px;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:4px 6px;color:#aeb7c4}
-    .gomera-list{display:grid;grid-template-columns:1fr 1fr;gap:7px}.gomera-item{border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px;font-size:8px;color:#b8c2cf;background:#121823}.gomera-item strong{display:block;color:#f4f6f8;margin-bottom:3px;font-size:9px}.gomera-item span{color:#7f8a99}
-    .vlc-list{display:grid;gap:6px}.vlc-row{display:grid;grid-template-columns:44px 1fr 54px;gap:7px;align-items:center;border-bottom:1px solid rgba(255,255,255,.06);padding:6px 0}.vlc-id{font-size:7px;color:#768292}.vlc-title{font-size:8px;color:#cbd3dd}.vlc-status{font-size:7px;text-align:right;color:var(--accent)}
-    @media(max-width:1000px){.site-pillars{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:680px){.site-pillars{grid-template-columns:1fr}.project-group-head{align-items:flex-start;flex-direction:column}.project-group-head p{text-align:left}}
-
-  </style>
+  <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Everyday <span>Automated</span></a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/articles/">Articles</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </div>
-</header>
+<header><div class="wrap nav">
+  <a class="brand" href="/">Everyday <span>Automated</span></a>
+  <nav>
+    <a class="active" href="/">Home</a>
+    <a href="/articles/">Articles</a>
+    <a href="/projects/">Projects</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</div></header>
 
 <main>
-  <section class="hero" id="home">
-    <div class="wrap hero-inner">
-      <div class="eyebrow">Automation · Data · AI</div>
-      <h1>Automations for<br>work and life.</h1>
-      <p>We build practical automations, data systems and AI-powered tools that remove repetitive work and connect the systems you already use.</p>
-      <div class="buttons"><a class="btn primary" href="/articles/">Read articles</a><a class="btn" href="/projects/">See projects</a></div>
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Automation · Data · AI</div>
+    <h1>Automations for<br>work and life.</h1>
+    <p>Practical automation, AI systems, data products and emerging technology — built and explained without the noise.</p>
+    <div class="btns">
+      <a class="btn primary" href="/projects/">See projects</a>
+      <a class="btn" href="/articles/">Read articles</a>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <section id="what">
-    <div class="wrap">
-      <div class="section-head">
-        <div><div class="label">What you’ll find here</div><h2>Technology that becomes useful.</h2></div>
-        <p>New technology, practical automation and real projects — from experiments to systems that actually run.</p>
-      </div>
-
-      <div class="site-pillars">
-        <article class="site-pillar">
-          <h3>Frontier Tech</h3>
-          <p>AI, robotics, quantum, agents and emerging technology worth watching beyond the hype cycle.</p>
-        </article>
-        <article class="site-pillar">
-          <h3>Work & Life Automation</h3>
-          <p>Practical ways to automate reporting, monitoring, learning, files, research and repetitive everyday tasks.</p>
-        </article>
-        <article class="site-pillar">
-          <h3>Projects & Experiments</h3>
-          <p>Real tools I build: data apps, AI systems, local information products, desktop utilities and automation workflows.</p>
-        </article>
-        <article class="site-pillar">
-          <h3>Production Reality</h3>
-          <p>Reliability, validation, monitoring and the messy parts that appear after a prototype starts running for real.</p>
-        </article>
-      </div>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="label">Explore</div><h2>Choose what you want to see.</h2></div>
+      <p>No endless homepage. The site is split into clear sections.</p>
     </div>
-  </section>
 
+    <div class="home-paths">
+      <a class="path-card" href="/articles/">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h13"/></svg>
+        </div>
+        <h3>Articles</h3>
+        <p>AI, robotics, automation, quantum and practical ways to automate work and life.</p>
+        <div class="path-link">Open articles →</div>
+      </a>
 
+      <a class="path-card" href="/projects/">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>Projects</h3>
+        <p>Real products and tools, grouped by category instead of thrown into one wall.</p>
+        <div class="path-link">Open projects →</div>
+      </a>
 
+      <a class="path-card" href="/contact/">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+        </div>
+        <h3>Custom automation</h3>
+        <p>Automation, data and AI workflows built around a real process, not around a fashionable tool.</p>
+        <div class="path-link">See what I build →</div>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <section id="notes">
-    <div class="wrap">
-      <div class="section-head">
-        <div><div class="label">Frontier tech</div><h2>What’s happening next.</h2></div>
-        <p>AI, automation, robotics, quantum and emerging technology — filtered for what could actually change how we work and live.</p>
-      </div>
-
-      <div class="frontier-grid">
-        <a class="frontier-card" href="https://openai.com/news/product-releases/" target="_blank" rel="noopener noreferrer">
-          <div class="frontier-kicker">AI <span class="frontier-date">26 Oct 2026</span></div>
-          <h3>Frontier models keep moving from chat toward real work</h3>
-          <p>New model releases are increasingly focused on long-horizon tasks, software, research and tool use rather than simple question answering.</p>
-          <div class="frontier-link">Source: OpenAI ↗</div>
-        </a>
-
-        <a class="frontier-card" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Advances-Isaac-Platform-for-General-Purpose-Robotics-With-New-Reference-Humanoid-Frameworks-Simulation-Pipelines-and-Data/default.aspx" target="_blank" rel="noopener noreferrer">
-          <div class="frontier-kicker">Robotics <span class="frontier-date">21 Oct 2026</span></div>
-          <h3>NVIDIA expands Isaac for general-purpose and humanoid robotics</h3>
-          <p>New reference hardware, simulation pipelines and robot-learning tooling push robotics closer to reusable platforms instead of one-off systems.</p>
-          <div class="frontier-link">Source: NVIDIA ↗</div>
-        </a>
-
-        <a class="frontier-card" href="https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/" target="_blank" rel="noopener noreferrer">
-          <div class="frontier-kicker">Quantum <span class="frontier-date">15 Oct 2026</span></div>
-          <h3>Google reports a major step toward fault-tolerant quantum computing</h3>
-          <p>“Magic state cultivation” on the Willow processor reduced errors dramatically, attacking one of the costly bottlenecks in universal quantum computing.</p>
-          <div class="frontier-link">Source: Google Quantum AI ↗</div>
-        </a>
-
-        <a class="frontier-card" href="https://devblogs.microsoft.com/foundry/browser-automation-tool-ga/" target="_blank" rel="noopener noreferrer">
-          <div class="frontier-kicker">Automation <span class="frontier-date">19 Oct 2026</span></div>
-          <h3>Browser automation becomes a native tool for AI agents</h3>
-          <p>Microsoft made managed browser automation generally available in Foundry, letting agents navigate sites, complete forms and handle multi-step web workflows.</p>
-          <div class="frontier-link">Source: Microsoft ↗</div>
-        </a>
-      </div>
-
-      <div class="section-head" style="margin-top:54px;margin-bottom:20px">
-        <div><div class="label">Automate your work & life</div><h2>Useful before it becomes futuristic.</h2></div>
-        <p>Practical ideas for removing repetitive work, organizing information and getting technology to do more of the boring stuff.</p>
-      </div>
-
-      <div class="practical-grid">
-        <article class="practical-card"><span class="mini-tag">Work</span><h3>Automate recurring reports</h3><p>Collect data automatically, validate it, generate Excel or dashboards and send the result without rebuilding the same report every week.</p></article>
-        <article class="practical-card"><span class="mini-tag">Personal knowledge</span><h3>Turn your own files into a useful assistant</h3><p>Use RAG over notes, PDFs and documents so an AI assistant works from your material instead of answering generically.</p></article>
-        <article class="practical-card"><span class="mini-tag">Monitoring</span><h3>Stop checking things manually</h3><p>Track prices, availability, jobs, events, system health or incoming data and only get notified when something actually changes.</p></article>
-        <article class="practical-card"><span class="mini-tag">Learning</span><h3>Build a learning loop around AI</h3><p>Convert reading, vocabulary or courses into flashcards, practice prompts and review queues with human approval where it matters.</p></article>
-        <article class="practical-card"><span class="mini-tag">Files</span><h3>Make your folders work for you</h3><p>Automatically classify, rename, move, back up or extract information from documents and photos instead of doing digital housekeeping by hand.</p></article>
-        <article class="practical-card"><span class="mini-tag">Everyday life</span><h3>Create personal agents around real tasks</h3><p>Planning, reminders, travel research, household admin and repeated online tasks are becoming realistic places for small, controlled agents.</p></article>
+<section>
+  <div class="wrap featured">
+    <div class="feature-panel">
+      <div class="map-preview" aria-label="Stylized Canary Islands project map preview">
+        <div class="map-grid"></div>
+        <span class="island i1"></span><span class="island i2"></span><span class="island i3"></span>
+        <span class="island i4"></span><span class="island i5"></span><span class="island i6"></span>
+        <span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span>
+        <div class="map-ui"><span>Explore</span><span>Transport</span><span>Live</span></div>
       </div>
     </div>
-  </section>
-
-
-  <section id="projects">
-    <div class="wrap">
-      <div class="section-head">
-        <div><div class="label">Projects</div><h2>Things I’m building.</h2></div>
-        <p>Grouped by what they actually do instead of one long wall of unrelated cards.</p>
-      </div>
-
-      <div class="project-group">
-        <div class="project-group-head">
-          <h3>Local, travel & information products</h3>
-          <p>Products that organize places, events, local information and travel planning into something genuinely useful.</p>
-        </div>
-        <div class="projects-grid">
-
-          <article class="project-card">
-            <div class="project-preview compact">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">Canarias Cerca · Explore</span></div>
-              <div class="mock-ui">
-                <div class="mock-top"><span>Map-first local discovery</span><span class="mock-pill">Canary Islands</span></div>
-                <div class="map-mock">
-                  <div class="map-side"><div class="map-tile">Explore</div><div class="map-tile">Transport</div><div class="map-tile">Events</div><div class="map-tile">Live data</div></div>
-                  <div class="map-canvas"><span class="island i1"></span><span class="island i2"></span><span class="island i3"></span><span class="island i4"></span><span class="map-pin p1"></span><span class="map-pin p2"></span></div>
-                </div>
-              </div>
-            </div>
-            <div class="project-category">Travel Product · Geospatial Platform</div>
-            <div class="project-title-row"><h3>Canarias Cerca</h3><span class="state active">Active development</span></div>
-            <p class="project-copy">A map-first product for discovering the Canary Islands through places, transport, events and useful local data.</p>
-            <div class="stack"><span>JavaScript</span><span>FastAPI</span><span>PostGIS</span><span>MapLibre</span><span>Railway</span></div>
-            <div class="project-actions"><a class="btn primary" href="https://www.canariascerca.es" target="_blank" rel="noopener noreferrer">Website ↗</a><button class="btn view-project" data-modal="canarias-modal">View Project</button></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-preview compact">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">La Gomera List</span></div>
-              <div class="gomera-ui">
-                <div class="mock-top"><span>Trip planning</span><span class="mock-pill">La Gomera</span></div>
-                <div class="gomera-list">
-                  <div class="gomera-item"><strong>Miradores</strong><span>views · sunsets</span></div>
-                  <div class="gomera-item"><strong>Routes</strong><span>hikes · drives</span></div>
-                  <div class="gomera-item"><strong>Villages</strong><span>local stops</span></div>
-                  <div class="gomera-item"><strong>Food</strong><span>cheese · miel · local products</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="project-category">Travel Planning · Personal Tool</div>
-            <div class="project-title-row"><h3>La Gomera List</h3><span class="state prototype">Experiment</span></div>
-            <p class="project-copy">A structured travel-planning tool for La Gomera: places, viewpoints, villages, beaches, routes, food and useful source links organized into one practical list.</p>
-            <div class="stack"><span>Travel data</span><span>Planning</span><span>Sources</span><span>Lists</span></div>
-            <div class="project-actions"><button class="btn view-project" data-modal="gomera-modal">View Project</button></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-preview compact">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">News VLC in Polish · editorial queue</span></div>
-              <div class="vlc-ui">
-                <div class="mock-top"><span>Local news publishing</span><span class="mock-pill">PL</span></div>
-                <div class="vlc-list">
-                  <div class="vlc-row"><span class="vlc-id">#70</span><span class="vlc-title">AEMET · Valencia weather</span><span class="vlc-status">published</span></div>
-                  <div class="vlc-row"><span class="vlc-id">#69</span><span class="vlc-title">Public housing update</span><span class="vlc-status">pending</span></div>
-                  <div class="vlc-row"><span class="vlc-id">#51</span><span class="vlc-title">Cercanías plan</span><span class="vlc-status">published</span></div>
-                  <div class="vlc-row"><span class="vlc-id">#45</span><span class="vlc-title">Culture & events</span><span class="vlc-status">published</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="project-category">Local News · Publishing Automation</div>
-            <div class="project-title-row"><h3>News VLC in Polish</h3><span class="state active">Active development</span></div>
-            <p class="project-copy">A Polish-language Valencia news workflow with article ingestion, editorial review, pending/published states and page publishing.</p>
-            <div class="stack"><span>Python</span><span>Django</span><span>Docker</span><span>Editorial workflow</span><span>Automation</span></div>
-            <div class="project-actions"><button class="btn view-project" data-modal="vlc-modal">View Project</button></div>
-          </article>
-        </div>
-      </div>
-
-      <div class="project-group">
-        <div class="project-group-head">
-          <h3>AI & language systems</h3>
-          <p>LLM and RAG projects where the model is part of a controlled workflow rather than the whole product.</p>
-        </div>
-        <div class="projects-grid">
-
-          <article class="project-card">
-            <div class="project-preview compact">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">AI Anki Language Assistant</span></div>
-              <div class="mock-ui">
-                <div class="mock-top"><span>Vocabulary · Grammar · Review</span><span class="mock-pill">Desktop</span></div>
-                <div class="mock-panel anki-card"><div class="anki-word">to come across</div><div class="anki-example">I came across an interesting expression while reading.</div><div class="anki-tools"><span>LLM review</span><span>STT</span><span>TTS</span><span>Dedup</span></div></div>
-              </div>
-            </div>
-            <div class="project-category">AI Product · Language Learning</div>
-            <div class="project-title-row"><h3>AI Anki Language Assistant</h3><span class="state active">Active development</span></div>
-            <p class="project-copy">A desktop language-learning app for generating reviewed Anki flashcards from vocabulary, grammar and imported materials.</p>
-            <div class="stack"><span>Python</span><span>LLM</span><span>STT/TTS</span><span>Anki</span><span>Desktop</span></div>
-            <div class="project-actions"><a class="btn" href="https://github.com/paulinap92/ai-anki-language-assistant" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button class="btn view-project" data-modal="anki-modal">View Project</button></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-preview compact">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">RAG Language Agent</span></div>
-              <div class="mock-ui">
-                <div class="mock-top"><span>Conversation tutor</span><span class="mock-pill">Sources on</span></div>
-                <div class="chat-mock"><div class="bubble user">Can we practise expressions from my lesson?</div><div class="bubble ai">Yes. I’ll keep the conversation grounded in your materials.</div><div class="sources"><span>lesson.pdf</span><span>notes.md</span><span>retrieval</span></div></div>
-              </div>
-            </div>
-            <div class="project-category">RAG · Conversational AI</div>
-            <div class="project-title-row"><h3>RAG Language Agent</h3><span class="state active">In development</span></div>
-            <p class="project-copy">A conversation and learning tutor grounded in the user’s own materials through retrieval and contextual feedback.</p>
-            <div class="stack"><span>Python</span><span>FastAPI</span><span>LangGraph</span><span>RAG</span><span>Qdrant</span></div>
-            <div class="project-actions"><button class="btn view-project" data-modal="rag-modal">View Project</button></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-preview compact">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">AI Content Intelligence Engine</span></div>
-              <div class="mock-ui">
-                <div class="mock-top"><span>Source → structured content</span><span class="mock-pill">Human review</span></div>
-                <div class="pipeline"><div class="node">Crawl</div><div class="node">Classify</div><div class="node">Extract</div><div class="node">Draft</div><div class="node review">Review</div></div>
-              </div>
-            </div>
-            <div class="project-category">LLM Workflow · Content Intelligence</div>
-            <div class="project-title-row"><h3>AI Content Intelligence Engine</h3><span class="state active">In development</span></div>
-            <p class="project-copy">A LangGraph pipeline for source ingestion, classification, metadata extraction and multilingual drafts with human approval.</p>
-            <div class="stack"><span>Python</span><span>LangGraph</span><span>LLM</span><span>HITL</span><span>Gemini</span></div>
-            <div class="project-actions"><a class="btn" href="https://github.com/paulinap92/ai-content-ops-platform/tree/feature/database-social-studio" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button class="btn view-project" data-modal="content-modal">View Project</button></div>
-          </article>
-        </div>
-      </div>
-
-      <div class="project-group">
-        <div class="project-group-head">
-          <h3>Data, monitoring & business automation</h3>
-          <p>Systems that collect, validate, monitor and turn raw data into useful decisions or reports.</p>
-        </div>
-        <div class="projects-grid">
-
-          <article class="project-card">
-            <div class="project-preview" aria-label="Preview of Canary Seismic Monitor">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">canary-seismic-monitor-production.up.railway.app</span></div>
-              <div class="seismic-ui"><img class="seismic-cover" src="assets/canary-seismic-portfolio-cover.webp" alt="Canary seismic monitoring map" /><div class="preview-label">Seismic monitoring</div></div>
-            </div>
-            <div class="project-category">Data Automation · Interactive Dashboard</div>
-            <div class="project-title-row"><h3>Canary Seismic Monitor</h3><span class="state">Finished</span></div>
-            <p class="project-copy">Automated seismic monitoring using official IGN earthquake data, historical storage and interactive analysis.</p>
-            <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>Watchdog</span><span>Railway</span></div>
-            <div class="project-actions"><a class="btn primary" href="https://canary-seismic-monitor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a><a class="btn" href="https://github.com/everyday-automated/canary-seismic-monitor-demo" target="_blank" rel="noopener noreferrer">Public Code ↗</a><button class="btn view-project" data-modal="canary-modal">View Project</button></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-preview">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">canarias-tourism-pulse-production.up.railway.app</span></div>
-              <div class="tourism-ui"><img class="tourism-cover" src="assets/canarias-tourism-dashboard.svg" alt="Canarias Tourism Pulse dashboard" /><div class="preview-label">Tourism analytics</div></div>
-            </div>
-            <div class="project-category">Data Automation · Reporting Dashboard</div>
-            <div class="project-title-row"><h3>Canarias Tourism Pulse</h3><span class="state">Finished</span></div>
-            <p class="project-copy">Official ISTAC tourism data turned into an automatically refreshed dashboard and Excel reporting workflow.</p>
-            <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Railway</span></div>
-            <div class="project-actions"><a class="btn primary" href="https://canarias-tourism-pulse-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a><button class="btn view-project" data-modal="tourism-modal">View Project</button></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-preview compact">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">Stock & Sales Intelligence</span></div>
-              <div class="mock-ui"><div class="mock-top"><span>Sales + stock analysis</span><span class="mock-pill">Excel workflow</span></div><div class="sales-kpis"><div class="sales-kpi"><span>Revenue</span><strong>€128k</strong></div><div class="sales-kpi"><span>Reorder</span><strong>18</strong></div><div class="sales-kpi"><span>Dead stock</span><strong>7</strong></div></div><div class="bars"><div class="bar" style="height:28%"></div><div class="bar hot" style="height:62%"></div><div class="bar" style="height:43%"></div><div class="bar hot" style="height:78%"></div></div></div>
-            </div>
-            <div class="project-category">Business Automation · Reporting</div>
-            <div class="project-title-row"><h3>Stock & Sales Intelligence</h3><span class="state prototype">Prototype</span></div>
-            <p class="project-copy">A workflow that validates sales and stock files, calculates KPIs and produces a ready-to-use Excel report.</p>
-            <div class="stack"><span>Python</span><span>Pandas</span><span>Excel</span><span>Google Drive</span><span>Reporting</span></div>
-            <div class="project-actions"><button class="btn view-project" data-modal="sales-modal">View Project</button></div>
-          </article>
-        </div>
-      </div>
-
-      <div class="project-group">
-        <div class="project-group-head">
-          <h3>Personal tools & desktop automation</h3>
-          <p>Smaller tools built to remove repetitive work from everyday digital life.</p>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-preview compact">
-              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">Photo Organizer</span></div>
-              <div class="photo-ui">
-                <div class="mock-top"><span>Photo library</span><span class="mock-pill">Desktop</span></div>
-                <div class="photo-grid"><div class="photo-tile"></div><div class="photo-tile"></div><div class="photo-tile"></div><div class="photo-tile"></div><div class="photo-tile"></div><div class="photo-tile"></div></div>
-                <div class="photo-tools"><span>Detect events</span><span>Edit events</span><span>Copy library events</span></div>
-              </div>
-            </div>
-            <div class="project-category">Desktop Utility · Personal Automation</div>
-            <div class="project-title-row"><h3>Photo Organizer</h3><span class="state active">In development</span></div>
-            <p class="project-copy">A desktop tool for organizing a photo library into events, reviewing detected groups and copying selected library events instead of sorting folders by hand.</p>
-            <div class="stack"><span>Python</span><span>PyQt</span><span>Photo library</span><span>Events</span><span>Desktop</span></div>
-            <div class="project-actions"><button class="btn view-project" data-modal="photo-modal">View Project</button></div>
-          </article>
-        </div>
+    <div class="feature-copy">
+      <div class="label">Featured project</div>
+      <h2>Canarias Cerca</h2>
+      <p>A map-first Canary Islands product combining curated places, transport, events and useful live information in one local interface.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://www.canariascerca.es" target="_blank" rel="noopener">Open website ↗</a>
+        <a class="btn" href="/projects/">All projects</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="custom">
-    <div class="wrap custom">
-      <div><div class="label">Custom Automations</div><h2>Your workflow, automated.</h2></div>
+<section>
+  <div class="wrap">
+    <div class="mini-cta">
       <div>
-        <p>We choose the simplest useful architecture for the job — scripts, APIs, dashboards, AI, or a combination of them.</p>
-        <div class="tech"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>PostGIS</span><span>Dash</span><span>LLMs</span><span>RAG</span><span>LangGraph</span><span>APIs</span><span>Docker</span></div>
+        <div class="label">Custom work</div>
+        <h2>Have a repetitive workflow?</h2>
+        <p>Reports, monitoring, data collection, small internal tools, AI workflows or purpose-built automation.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap contact">
-      <div><div class="label">Contact</div><h2>Everyday Automated</h2><p>Automations for work and life.</p></div>
-    </div>
-  </section>
-
-  <div class="modal" id="canary-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="canary-title">
-      <div class="modal-head">
-        <div><div class="project-category">Finished · Data Automation · Interactive Dashboard</div><h3 id="canary-title">Canary Seismic Monitor</h3></div>
-        <button class="close" data-close aria-label="Close">×</button>
-      </div>
-      <p class="project-copy">Canary Seismic Monitor automatically collects earthquake data from Spain’s Instituto Geográfico Nacional, processes and classifies events by island, stores historical records in CSV, and presents the results through an interactive Dash dashboard.</p>
-      <div class="architecture-line"><strong>Architecture:</strong> IGN Feed → Scheduled Python Ingestion → CSV History → Watchdog → Dash Dashboard</div>
-      <div class="detail-grid">
-        <div class="detail-block">
-          <h4>How it works</h4>
-          <ul><li>The application downloads current earthquake events from the official IGN feed.</li><li>Events are cleaned, deduplicated and assigned to the nearest Canary Island.</li><li>Historical records are stored in CSV on a persistent Railway volume.</li><li>Watchdog detects data-file changes and reloads the in-memory dataset.</li><li>Dash and Plotly present the map, filters, indicators and historical analysis.</li></ul>
-        </div>
-        <div class="detail-block">
-          <h4>Application features</h4>
-          <ul><li>Activity map and island filtering</li><li>Earthquake history, magnitude and depth analysis</li><li>Safe empty states when an island has no matching events</li><li>Automatic data updates and persistent history</li><li>Dockerized Railway deployment with automated tests</li></ul>
-        </div>
-        <div class="detail-block">
-          <h4>What it demonstrates</h4>
-          <div class="checks"><div class="check">Real external API/feed integration</div><div class="check">Scheduled data automation</div><div class="check">CSV-based historical storage</div><div class="check">Geographic data processing</div><div class="check">Interactive analytical dashboards</div><div class="check">Defensive handling of missing data</div><div class="check">Automated testing and cloud deployment</div></div>
-        </div>
-        <div class="detail-block">
-          <h4>Production vs public demo</h4>
-          <p>The Railway application is the live production dashboard and retrieves current IGN data automatically. The public GitHub repository is a portfolio-safe demo that uses a fixed snapshot of real IGN data; it does not expose the private production ingestion system.</p>
-          <div class="project-actions"><a class="btn primary" href="https://canary-seismic-monitor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a><a class="btn" href="https://github.com/everyday-automated/canary-seismic-monitor-demo" target="_blank" rel="noopener noreferrer">Public Demo Code ↗</a></div>
-        </div>
-      </div>
+      <a class="btn primary" href="/contact/">Contact</a>
     </div>
   </div>
-
-  <div class="modal" id="tourism-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="tourism-title">
-      <div class="modal-head">
-        <div><div class="project-category">Finished · Data Automation · Reporting</div><h3 id="tourism-title">Canarias Tourism Pulse</h3></div>
-        <button class="close" data-close aria-label="Close">×</button>
-      </div>
-      <p class="project-copy">An automated dashboard analysing official Canary Islands tourism data from ISTAC. It turns public or company data into an automatically updated web dashboard and an Excel report published to Google Drive.</p>
-      <div class="architecture-line"><strong>Architecture:</strong> ISTAC API → Scheduled Python Sync → Validated JSON Snapshot → Dash Dashboard + Excel Report → Google Drive</div>
-      <div class="detail-grid">
-        <div class="detail-block">
-          <h4>Features</h4>
-          <ul><li>Responsive Dash dashboard with seven thematic tabs</li><li>Airport passengers, ferries, cruise traffic and tourists by island</li><li>Accommodation occupancy and availability</li><li>Tourism spending, KPI and automatic charts</li><li>Current Excel report generated directly from the web app</li><li>Background ISTAC data refresh with last-known-good fallback</li></ul>
-        </div>
-        <div class="detail-block">
-          <h4>Architecture</h4>
-          <p>One lightweight service: Python, Dash, Plotly, OpenPyXL, Gunicorn, JSON snapshot, background job, Google Drive and Railway. No database and no separate FastAPI backend.</p>
-        </div>
-        <div class="detail-block">
-          <h4>What it can mean for a business</h4>
-          <ul><li>Automate data collection from APIs</li><li>Replace manually updated Excel files</li><li>Build an internal or public dashboard</li><li>Generate Excel reports automatically</li><li>Monitor data quality and preserve working snapshots</li><li>Publish the tool as a private or public web app</li></ul>
-        </div>
-        <div class="detail-block">
-          <h4>Technology</h4>
-          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Gunicorn</span><span>JSON</span><span>Background Job</span><span>Google Drive</span><span>Railway</span></div>
-          <div class="project-actions"><a class="btn primary" href="https://canarias-tourism-pulse-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a><a class="btn" href="https://drive.google.com/file/d/1_iy32lEjZE9oY2rUFI_xnerajH5SjZJL/view" target="_blank" rel="noopener noreferrer">Open Excel Report ↗</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="modal" id="canarias-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="canarias-title">
-      <div class="modal-head"><div><div class="project-category">Active development · Travel Product · Geospatial Platform</div><h3 id="canarias-title">Canarias Cerca</h3></div><button class="close" data-close aria-label="Close">×</button></div>
-      <p class="project-copy">Canarias Cerca is a map-first product for exploring the Canary Islands. It combines curated places, transport, events and useful live data in a focused local interface.</p>
-      <div class="architecture-line"><strong>Architecture:</strong> Vanilla JavaScript + MapLibre → FastAPI → PostgreSQL/PostGIS → Railway</div>
-      <div class="detail-grid">
-        <div class="detail-block"><h4>Product scope</h4><ul><li>Beaches, viewpoints, villages, natural pools and local points of interest</li><li>Transport layers for airports, ports, ferries, buses and tram</li><li>Events from multiple official sources</li><li>Live modules reserved for genuinely live information</li></ul></div>
-        <div class="detail-block"><h4>Data workflow</h4><ul><li>Local content editor for crawling and reviewing official sources</li><li>Normalization, deduplication and manual approval before publication</li><li>Geospatial storage with PostGIS</li><li>GTFS and official transport feeds where available</li></ul></div>
-        <div class="detail-block"><h4>What it demonstrates</h4><div class="checks"><div class="check">Geospatial product design</div><div class="check">FastAPI + PostGIS architecture</div><div class="check">Multi-source data integration</div><div class="check">Human-in-the-loop content workflow</div></div></div>
-        <div class="detail-block"><h4>Product principle</h4><p>The goal is not to rebuild Google Maps. The interface stays focused on local discovery, orientation and useful island-specific context.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="anki-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="anki-title">
-      <div class="modal-head"><div><div class="project-category">Active development · AI Product · Language Learning</div><h3 id="anki-title">AI Anki Language Assistant</h3></div><button class="close" data-close aria-label="Close">×</button></div>
-      <p class="project-copy">A desktop language-learning app that turns vocabulary, grammar and imported materials into reviewed Anki cards while keeping the user in control before anything is saved.</p>
-      <div class="architecture-line"><strong>Workflow:</strong> Material / Vocabulary → Candidate Review → LLM Generation → Validation → Queue → Final Review → Anki</div>
-      <div class="detail-grid">
-        <div class="detail-block"><h4>Core features</h4><ul><li>Vocabulary and grammar card generation</li><li>Strict grammar structure validation and self-checks</li><li>Global duplicate protection across generation, import, queue and Anki save</li><li>Semantic source-role classification for imported material</li></ul></div>
-        <div class="detail-block"><h4>Speech & models</h4><ul><li>Local Whisper and cloud STT</li><li>Piper TTS with multiple languages</li><li>Multiple LLM providers including free-provider options</li><li>Human review remains part of the workflow</li></ul></div>
-        <div class="detail-block"><h4>Technology</h4><div class="stack"><span>Python</span><span>LLMs</span><span>Whisper</span><span>Piper</span><span>AnkiConnect</span></div></div>
-        <div class="detail-block"><h4>Public project</h4><p>The desktop application is public on GitHub and includes its own user/developer documentation workflow.</p><div class="project-actions"><a class="btn" href="https://github.com/paulinap92/ai-anki-language-assistant" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="rag-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rag-title">
-      <div class="modal-head"><div><div class="project-category">In development · RAG · Conversational AI</div><h3 id="rag-title">RAG Language Agent</h3></div><button class="close" data-close aria-label="Close">×</button></div>
-      <p class="project-copy">A conversation and learning agent that retrieves from the learner’s own materials so practice, corrections and suggested expressions stay grounded in what the user is actually studying.</p>
-      <div class="architecture-line"><strong>Architecture:</strong> Learning Materials → Chunking & Embeddings → Qdrant → Retrieval → LangGraph Conversation → Grounded Feedback</div>
-      <div class="detail-grid">
-        <div class="detail-block"><h4>Learning workflow</h4><ul><li>Ingest lesson notes, PDFs and text materials</li><li>Retrieve relevant fragments during conversation</li><li>Reuse target vocabulary and structures in context</li><li>Give feedback tied to retrieved source material</li></ul></div>
-        <div class="detail-block"><h4>Agent layer</h4><ul><li>FastAPI service</li><li>LangGraph stateful conversation flow</li><li>Provider switching for LLM calls</li><li>Structured outputs for reliable downstream use</li></ul></div>
-        <div class="detail-block"><h4>Why RAG here</h4><p>The value is not generic chat. Retrieval keeps the tutor anchored to the learner’s course, notes and chosen material.</p></div>
-        <div class="detail-block"><h4>Technology</h4><div class="stack"><span>Python</span><span>FastAPI</span><span>LangGraph</span><span>RAG</span><span>Qdrant</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="content-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="content-title">
-      <div class="modal-head"><div><div class="project-category">In development · LLM Workflow · Content Intelligence</div><h3 id="content-title">AI Content Intelligence Engine</h3></div><button class="close" data-close aria-label="Close">×</button></div>
-      <p class="project-copy">A reusable content-processing engine for turning source URLs, crawled pages or raw text into structured, multilingual drafts while preserving a human approval step.</p>
-      <div class="architecture-line"><strong>Workflow:</strong> Crawl / Source → Classify → Extract Metadata → Generate ES/EN/PL Drafts → Review / Revise → Structured Export</div>
-      <div class="detail-grid">
-        <div class="detail-block"><h4>Pipeline</h4><ul><li>Source URL, text, topic or crawler ingestion</li><li>Classification and metadata extraction</li><li>Structured multilingual draft generation</li><li>Checkpointed review and revision workflow</li></ul></div>
-        <div class="detail-block"><h4>Human in the loop</h4><p>The engine prepares content but does not publish automatically. Approval remains a deliberate separate action.</p></div>
-        <div class="detail-block"><h4>First real use case</h4><p>Canarias Cerca uses this direction for local content and event-source workflows, keeping acquisition, normalization and publication responsibilities separate.</p></div>
-        <div class="detail-block"><h4>Technology</h4><div class="stack"><span>Python</span><span>LangGraph</span><span>Gemini</span><span>Structured Output</span><span>HITL</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="sales-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="sales-title">
-      <div class="modal-head"><div><div class="project-category">Prototype · Business Automation · Reporting</div><h3 id="sales-title">Stock & Sales Intelligence</h3></div><button class="close" data-close aria-label="Close">×</button></div>
-      <p class="project-copy">A business automation prototype that turns sales, stock and optional product spreadsheets into validated analysis and a generated management report.</p>
-      <div class="architecture-line"><strong>Workflow:</strong> Google Drive INPUT → Validate & Merge → KPI / Inventory Analysis → Excel Report → OUTPUT</div>
-      <div class="detail-grid">
-        <div class="detail-block"><h4>Analysis</h4><ul><li>Revenue, margins and product performance</li><li>Inventory rotation and dead stock</li><li>Stockout risk and reorder recommendations</li><li>Sales trends, anomalies and forecast-ready outputs</li></ul></div>
-        <div class="detail-block"><h4>Generated workbook</h4><ul><li>Dashboard</li><li>Product Performance</li><li>Reorder Recommendations</li><li>Dead Stock, Trends and Data Quality</li></ul></div>
-        <div class="detail-block"><h4>Business value</h4><p>It replaces repetitive spreadsheet preparation with a repeatable validation and reporting pipeline.</p></div>
-        <div class="detail-block"><h4>Technology</h4><div class="stack"><span>Python</span><span>Pandas</span><span>OpenPyXL</span><span>Google Drive</span><span>Pydantic</span></div></div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="modal" id="gomera-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="gomera-title">
-      <div class="modal-head"><div><div class="project-category">Experiment · Travel Planning · Personal Tool</div><h3 id="gomera-title">La Gomera List</h3></div><button class="close" data-close aria-label="Close">×</button></div>
-      <p class="project-copy">A structured planning list for a longer La Gomera trip, focused on nature, viewpoints, villages, beaches, hiking, food and routes by car.</p>
-      <div class="detail-grid"><div class="detail-block"><h4>Planning scope</h4><ul><li>Viewpoints and sunsets</li><li>Hiking routes and drives</li><li>Villages and beaches</li><li>Cheese, mieles and local products</li></ul></div><div class="detail-block"><h4>Useful base places</h4><p>San Sebastián de La Gomera, Valle Gran Rey, Hermigua and Agulo are used as practical planning anchors.</p></div></div>
-    </div>
-  </div>
-
-  <div class="modal" id="vlc-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="vlc-title">
-      <div class="modal-head"><div><div class="project-category">Active development · Local News · Publishing Automation</div><h3 id="vlc-title">News VLC in Polish</h3></div><button class="close" data-close aria-label="Close">×</button></div>
-      <p class="project-copy">A Polish-language local news system for Valencia with an editorial queue instead of blind automatic publishing.</p>
-      <div class="detail-grid"><div class="detail-block"><h4>Workflow</h4><ul><li>Incoming local news items</li><li>Pending and published states</li><li>Editorial review before publication</li><li>Page publishing and article tracking</li></ul></div><div class="detail-block"><h4>Implementation</h4><p>The current local stack uses a containerized Django backend and database-backed article workflow.</p></div></div>
-    </div>
-  </div>
-
-  <div class="modal" id="photo-modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="photo-title">
-      <div class="modal-head"><div><div class="project-category">In development · Desktop Utility · Personal Automation</div><h3 id="photo-title">Photo Organizer</h3></div><button class="close" data-close aria-label="Close">×</button></div>
-      <p class="project-copy">A PyQt desktop application for turning a messy photo library into editable events and reusable groups.</p>
-      <div class="detail-grid"><div class="detail-block"><h4>Features</h4><ul><li>Organize photos into event proposals</li><li>Edit detected events</li><li>Copy selected library events</li><li>Desktop-first workflow for large local photo collections</li></ul></div><div class="detail-block"><h4>Goal</h4><p>Reduce repetitive manual sorting while keeping event grouping editable instead of making irreversible automatic decisions.</p></div></div>
-    </div>
-  </div>
+</section>
 </main>
 
-<footer><div class="wrap footer"><span>© <span id="year"></span> Everyday Automated</span><span>Automation · Data · AI</span></div></footer>
-<script>
-  document.getElementById('year').textContent=new Date().getFullYear();
-  const openModal = id => { const modal=document.getElementById(id); if(!modal) return; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); };
-  const closeModal = modal => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
-  document.querySelectorAll('[data-modal]').forEach(btn=>btn.addEventListener('click',()=>openModal(btn.dataset.modal)));
-  document.querySelectorAll('[data-close]').forEach(btn=>btn.addEventListener('click',()=>closeModal(btn.closest('.modal'))));
-  document.querySelectorAll('.modal').forEach(modal=>modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(modal); }));
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') document.querySelectorAll('.modal.open').forEach(closeModal); });
-</script>
+<footer><div class="wrap footer"><span>© 2026 Everyday Automated</span><span>Automation · Data · AI</span></div></footer>
 </body>
-<!-- Canarias Tourism Pulse published -->
 </html>
