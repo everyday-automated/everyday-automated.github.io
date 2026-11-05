@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Everyday Automated — automation news, AI tools, practical experiments and projects." />
+  <meta name="description" content="Everyday Automated — automations, data tools and AI systems for work and life." />
   <title>Everyday Automated</title>
   <style>
     :root{
@@ -53,29 +53,15 @@
     @media(max-width:680px){.projects-grid{grid-template-columns:1fr}.project-card{min-height:auto}.mock-ui{height:155px}}
 
   
-    /* EDITORIAL / MAGAZINE */
-    .news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .news-card{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:20px;display:flex;flex-direction:column;min-height:300px;transition:.18s ease}
-    .news-card:hover{transform:translateY(-2px);border-color:rgba(139,255,207,.28)}
-    .news-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:30px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#778293}
-    .news-source{color:var(--accent);font-weight:800}
-    .news-card h3{font-size:24px;line-height:1.08;letter-spacing:-.035em;margin:0 0 14px}
-    .news-card p{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 20px}
-    .news-take{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:#c9d0da;line-height:1.5}
-    .news-take strong{color:var(--text)}
-    .read-link{margin-top:16px;font-size:12px;font-weight:800;color:var(--accent)}
-    .topics-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-    .topic{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018);padding:17px;min-height:128px}
-    .topic h3{font-size:15px;margin:0 0 8px;letter-spacing:-.02em}
-    .topic p{font-size:11px;color:var(--muted);line-height:1.5;margin:0}
-    .editorial-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
-    .editorial-strip span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--line);border-radius:999px;padding:6px 8px;color:#9ca6b5}
-    .about-mag{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
-    .about-mag p{font-size:17px;color:var(--muted);line-height:1.7;margin:0}
-    .about-points{display:grid;gap:10px;margin-top:20px}
-    .about-points div{font-size:12px;color:#cbd2dc;padding:10px 0;border-top:1px solid var(--line)}
-    @media(max-width:1000px){.news-grid{grid-template-columns:1fr}.topics-grid{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:680px){.topics-grid{grid-template-columns:repeat(2,1fr)}.about-mag{grid-template-columns:1fr;gap:22px}}
+    /* NOTES / EDITORIAL */
+    .notes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .note-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;min-height:230px;display:flex;flex-direction:column}
+    .note-card:hover{border-color:rgba(139,255,207,.25)}
+    .note-meta{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:800;margin-bottom:18px}
+    .note-card h3{font-size:22px;line-height:1.1;letter-spacing:-.03em;margin:0 0 12px}
+    .note-card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 16px}
+    .note-foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:#9fa9b7}
+    @media(max-width:1000px){.notes-grid{grid-template-columns:1fr}}
 
   </style>
 </head>
@@ -84,10 +70,11 @@
   <div class="wrap nav">
     <a class="brand" href="#home">Everyday <span>Automated</span></a>
     <nav>
-      <a href="#latest">Latest</a>
-      <a href="#topics">Topics</a>
+      <a href="#what">What we do</a>
+      <a href="#notes">Notes</a>
       <a href="#projects">Projects</a>
-      <a href="#about">About</a>
+      <a href="#custom">Custom</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -95,73 +82,89 @@
 <main>
   <section class="hero" id="home">
     <div class="wrap hero-inner">
-      <div class="eyebrow">Automation · AI · Agents · Data</div>
-      <h1>What’s new.<br>What works.</h1>
-      <p>Everyday Automated follows the fast-moving world of automation and AI — useful product updates, practical workflows, experiments and real projects without the hype.</p>
-      <div class="buttons"><a class="btn primary" href="#latest">Latest updates</a><a class="btn" href="#projects">What I’m building</a></div>
+      <div class="eyebrow">Automation · Data · AI</div>
+      <h1>Automations for<br>work and life.</h1>
+      <p>We build practical automations, data systems and AI-powered tools that remove repetitive work and connect the systems you already use.</p>
+      <div class="buttons"><a class="btn primary" href="#what">What we do</a><a class="btn" href="#projects">See projects</a></div>
     </div>
   </section>
 
-
-  <section id="latest">
+  <section id="what">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="label">Latest</div><h2>Worth knowing right now.</h2></div>
-        <p>Short takes on automation updates that are actually useful — with the original source linked every time.</p>
+        <div><div class="label">What we do</div><h2>Systems that do the boring part.</h2></div>
+        <p>From simple automations to AI assistants and data applications — the technology depends on the problem.</p>
       </div>
 
-      <div class="news-grid">
-        <a class="news-card" href="https://blog.n8n.io/introducing-n8n-v3/" target="_blank" rel="noopener noreferrer">
-          <div class="news-meta"><span class="news-source">n8n</span><span>27 Oct 2026</span></div>
-          <h3>n8n 3.0 enters beta with a reliability-first overhaul</h3>
-          <p>The new major version focuses on stability, security defaults and internal cleanup. Because it includes breaking changes, n8n also added a Migration Report to show what needs attention before upgrading.</p>
-          <div class="news-take"><strong>Why it matters:</strong> this is the kind of release that affects production workflows more than flashy UI features do.</div>
-          <div class="read-link">Read source ↗</div>
-        </a>
-
-        <a class="news-card" href="https://www.make.com/blog/what-to-automate-next-introducing-make-process-intelligence" target="_blank" rel="noopener noreferrer">
-          <div class="news-meta"><span class="news-source">Make</span><span>20 Oct 2026</span></div>
-          <h3>Make introduces Process Intelligence</h3>
-          <p>Make is moving upstream from building automations to identifying what should be automated in the first place, combining task mining and process mining to expose how work actually flows.</p>
-          <div class="news-take"><strong>Why it matters:</strong> automation platforms are starting to compete on discovery and observability, not only workflow execution.</div>
-          <div class="read-link">Read source ↗</div>
-        </a>
-
-        <a class="news-card" href="https://zapier.com/blog/zapier-agents-is-now-ai-by-zapier/" target="_blank" rel="noopener noreferrer">
-          <div class="news-meta"><span class="news-source">Zapier</span><span>06 Oct 2026</span></div>
-          <h3>Zapier folds Agents into the core Zap editor</h3>
-          <p>Tool calling, reasoning and autonomous actions now live inside an AI step in normal Zaps instead of a separate Agents product, bringing agentic behavior closer to standard workflow automation.</p>
-          <div class="news-take"><strong>Why it matters:</strong> the line between deterministic workflows and agents is getting thinner — and easier to govern in one place.</div>
-          <div class="read-link">Read source ↗</div>
-        </a>
+      <div class="capabilities">
+        <article class="capability">
+          <h3>Automation</h3>
+          <p>Automate repetitive operational work and event-driven workflows.</p>
+          <div class="mini"><span>File & folder monitoring</span><span>Reports & scheduled jobs</span><span>Backups & processing</span></div>
+        </article>
+        <article class="capability">
+          <h3>Data & Dashboards</h3>
+          <p>Turn raw data into useful monitoring, analysis and reporting tools.</p>
+          <div class="mini"><span>Interactive dashboards</span><span>Data validation & pipelines</span><span>SQL / API analytics</span></div>
+        </article>
+        <article class="capability">
+          <h3>AI, LLM & RAG</h3>
+          <p>Use language models where they actually improve the workflow.</p>
+          <div class="mini"><span>RAG assistants</span><span>Document extraction</span><span>Semantic search</span></div>
+        </article>
+        <article class="capability">
+          <h3>MCP & Agents</h3>
+          <p>Connect AI assistants with tools, data and controlled actions.</p>
+          <div class="mini"><span>MCP servers</span><span>Tool-using agents</span><span>Multi-step workflows</span></div>
+        </article>
+        <article class="capability">
+          <h3>Integrations</h3>
+          <p>Make services and internal systems work together automatically.</p>
+          <div class="mini"><span>APIs & webhooks</span><span>Google Drive</span><span>n8n / Power Automate</span></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="topics">
+
+
+  <section id="notes">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="label">Topics</div><h2>The parts I’m watching.</h2></div>
-        <p>Less generic “AI news”, more things that change how real automation systems are built and operated.</p>
+        <div><div class="label">Notes & updates</div><h2>Automation beyond the demo.</h2></div>
+        <p>Short notes on practical automation, AI systems, reliability and the things worth watching while I build.</p>
       </div>
-      <div class="topics-grid">
-        <div class="topic"><h3>Workflow Automation</h3><p>n8n, Make, Power Automate, orchestration and reliable scheduled work.</p></div>
-        <div class="topic"><h3>AI Agents</h3><p>Tools, permissions, memory, human approval and production agent patterns.</p></div>
-        <div class="topic"><h3>RAG</h3><p>Retrieval quality, grounded assistants, evaluation and practical knowledge systems.</p></div>
-        <div class="topic"><h3>MCP & Integrations</h3><p>Connecting assistants with apps, APIs, data and controlled actions.</p></div>
-        <div class="topic"><h3>Data Automation</h3><p>APIs, ETL, dashboards, validation, reporting and boring work done properly.</p></div>
-        <div class="topic"><h3>Reliability</h3><p>Monitoring, retries, fallbacks, tests and what breaks after the demo works.</p></div>
+
+      <div class="notes-grid">
+        <article class="note-card">
+          <div class="note-meta">Automation landscape</div>
+          <h3>What actually changes when automation becomes agentic?</h3>
+          <p>Less interest in “AI that can click things”, more in permissions, guardrails, observability and knowing when a workflow should stay deterministic.</p>
+          <div class="note-foot">Topic I’m following · Agents · MCP · orchestration</div>
+        </article>
+
+        <article class="note-card">
+          <div class="note-meta">Build note</div>
+          <h3>RAG is useful when the model has something specific to stay grounded in.</h3>
+          <p>The interesting part is no longer just vector search. Retrieval quality, evaluation, source control and useful feedback matter much more once the demo is over.</p>
+          <div class="note-foot">From RAG Language Agent · retrieval · evaluation</div>
+        </article>
+
+        <article class="note-card">
+          <div class="note-meta">Industrial ML</div>
+          <h3>24/7 computer vision is a reliability problem, not only a model problem.</h3>
+          <p>Monitoring, bad inputs, drift, recovery and production edge cases often matter more than squeezing another point out of an offline benchmark.</p>
+          <div class="note-foot">Production CV · reliability · monitoring</div>
+        </article>
       </div>
-      <div class="editorial-strip"><span>News</span><span>Build notes</span><span>Practical guides</span><span>Experiments</span><span>Project updates</span></div>
     </div>
   </section>
-
 
   <section id="projects">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="label">What I’m building</div><h2>Projects behind the notes.</h2></div>
-        <p>Real systems I build and test — useful context for the articles, experiments and opinions above.</p>
+        <div><div class="label">Selected projects</div><h2>Products, tools & systems.</h2></div>
+        <p>Finished products, active builds and focused prototypes across automation, data, AI and RAG.</p>
       </div>
 
       <div class="projects-grid">
@@ -292,17 +295,19 @@
     </div>
   </section>
 
-  <section id="about">
-    <div class="wrap about-mag">
-      <div><div class="label">About</div><h2>Automation without the brochure language.</h2></div>
+  <section id="custom">
+    <div class="wrap custom">
+      <div><div class="label">Custom Automations</div><h2>Your workflow, automated.</h2></div>
       <div>
-        <p>Everyday Automated is a technical notebook about automation, AI and data systems: what changes, what is worth trying, what fails in practice and what I’m building along the way.</p>
-        <div class="about-points">
-          <div>Original sources are linked on news items.</div>
-          <div>Projects are real builds, not made-up case studies.</div>
-          <div>The focus is practical implementation, reliability and useful trade-offs.</div>
-        </div>
+        <p>We choose the simplest useful architecture for the job — scripts, APIs, dashboards, AI, or a combination of them.</p>
+        <div class="tech"><span>Python</span><span>FastAPI</span><span>n8n</span><span>Power Automate</span><span>Dash</span><span>LLMs</span><span>RAG</span><span>MCP</span><span>APIs</span><span>Databricks</span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div><div class="label">Contact</div><h2>Everyday Automated</h2><p>Automations for work and life.</p></div>
     </div>
   </section>
 
@@ -439,7 +444,7 @@
 
 </main>
 
-<footer><div class="wrap footer"><span>© <span id="year"></span> Everyday Automated</span><span>Automation news · practical builds · no hype</span></div></footer>
+<footer><div class="wrap footer"><span>© <span id="year"></span> Everyday Automated</span><span>Automation · Data · AI</span></div></footer>
 <script>
   document.getElementById('year').textContent=new Date().getFullYear();
   const openModal = id => { const modal=document.getElementById(id); if(!modal) return; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); };
