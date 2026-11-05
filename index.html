@@ -81,6 +81,24 @@
     @media(max-width:1050px){.frontier-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:760px){.frontier-grid,.practical-grid{grid-template-columns:1fr}}
 
+  
+    /* REAL SITE STRUCTURE + PROJECT GROUPS */
+    .site-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .site-pillar{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;min-height:180px}
+    .site-pillar h3{font-size:19px;margin:0 0 10px;letter-spacing:-.025em}
+    .site-pillar p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
+    .project-group{margin-top:42px}
+    .project-group:first-of-type{margin-top:0}
+    .project-group-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+    .project-group-head h3{font-size:23px;letter-spacing:-.03em;margin:0}
+    .project-group-head p{font-size:12px;color:var(--muted);margin:0;max-width:460px;text-align:right;line-height:1.5}
+    .photo-ui,.gomera-ui,.vlc-ui{height:160px;padding:14px;background:linear-gradient(180deg,#0d121b,#090d14)}
+    .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;height:104px}.photo-tile{border-radius:8px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,#1b2430,#293544);position:relative;overflow:hidden}.photo-tile::after{content:"";position:absolute;inset:auto 8px 8px;height:5px;border-radius:999px;background:rgba(255,255,255,.13)}.photo-tools{display:flex;gap:5px;margin-top:8px}.photo-tools span{font-size:7px;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:4px 6px;color:#aeb7c4}
+    .gomera-list{display:grid;grid-template-columns:1fr 1fr;gap:7px}.gomera-item{border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px;font-size:8px;color:#b8c2cf;background:#121823}.gomera-item strong{display:block;color:#f4f6f8;margin-bottom:3px;font-size:9px}.gomera-item span{color:#7f8a99}
+    .vlc-list{display:grid;gap:6px}.vlc-row{display:grid;grid-template-columns:44px 1fr 54px;gap:7px;align-items:center;border-bottom:1px solid rgba(255,255,255,.06);padding:6px 0}.vlc-id{font-size:7px;color:#768292}.vlc-title{font-size:8px;color:#cbd3dd}.vlc-status{font-size:7px;text-align:right;color:var(--accent)}
+    @media(max-width:1000px){.site-pillars{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){.site-pillars{grid-template-columns:1fr}.project-group-head{align-items:flex-start;flex-direction:column}.project-group-head p{text-align:left}}
+
   </style>
 </head>
 <body>
@@ -107,38 +125,30 @@
     </div>
   </section>
 
+
   <section id="what">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="label">What we do</div><h2>Systems that do the boring part.</h2></div>
-        <p>From simple automations to AI assistants and data applications — the technology depends on the problem.</p>
+        <div><div class="label">What you’ll find here</div><h2>Technology that becomes useful.</h2></div>
+        <p>New technology, practical automation and real projects — from experiments to systems that actually run.</p>
       </div>
 
-      <div class="capabilities">
-        <article class="capability">
-          <h3>Automation</h3>
-          <p>Automate repetitive operational work and event-driven workflows.</p>
-          <div class="mini"><span>File & folder monitoring</span><span>Reports & scheduled jobs</span><span>Backups & processing</span></div>
+      <div class="site-pillars">
+        <article class="site-pillar">
+          <h3>Frontier Tech</h3>
+          <p>AI, robotics, quantum, agents and emerging technology worth watching beyond the hype cycle.</p>
         </article>
-        <article class="capability">
-          <h3>Data & Dashboards</h3>
-          <p>Turn raw data into useful monitoring, analysis and reporting tools.</p>
-          <div class="mini"><span>Interactive dashboards</span><span>Data validation & pipelines</span><span>SQL / API analytics</span></div>
+        <article class="site-pillar">
+          <h3>Work & Life Automation</h3>
+          <p>Practical ways to automate reporting, monitoring, learning, files, research and repetitive everyday tasks.</p>
         </article>
-        <article class="capability">
-          <h3>AI, LLM & RAG</h3>
-          <p>Use language models where they actually improve the workflow.</p>
-          <div class="mini"><span>RAG assistants</span><span>Document extraction</span><span>Semantic search</span></div>
+        <article class="site-pillar">
+          <h3>Projects & Experiments</h3>
+          <p>Real tools I build: data apps, AI systems, local information products, desktop utilities and automation workflows.</p>
         </article>
-        <article class="capability">
-          <h3>MCP & Agents</h3>
-          <p>Connect AI assistants with tools, data and controlled actions.</p>
-          <div class="mini"><span>MCP servers</span><span>Tool-using agents</span><span>Multi-step workflows</span></div>
-        </article>
-        <article class="capability">
-          <h3>Integrations</h3>
-          <p>Make services and internal systems work together automatically.</p>
-          <div class="mini"><span>APIs & webhooks</span><span>Google Drive</span><span>n8n / Power Automate</span></div>
+        <article class="site-pillar">
+          <h3>Production Reality</h3>
+          <p>Reliability, validation, monitoring and the messy parts that appear after a prototype starts running for real.</p>
         </article>
       </div>
     </div>
@@ -200,137 +210,202 @@
     </div>
   </section>
 
+
   <section id="projects">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="label">Selected projects</div><h2>Products, tools & systems.</h2></div>
-        <p>Finished products, active builds and focused prototypes across automation, data, AI and RAG.</p>
+        <div><div class="label">Projects</div><h2>Things I’m building.</h2></div>
+        <p>Grouped by what they actually do instead of one long wall of unrelated cards.</p>
       </div>
 
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-preview" aria-label="Preview of the Canary Seismic Monitor interface">
-            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">canary-seismic-monitor-production.up.railway.app</span></div>
-            <div class="seismic-ui">
-              <img class="seismic-cover" src="assets/canary-seismic-portfolio-cover.webp" alt="Bathymetric map of the Canary Islands with highlighted seismic epicentres" />
-              <div class="preview-label">Seismic monitoring</div>
-            </div>
-          </div>
-          <div class="project-category">Data Automation · Interactive Dashboard</div>
-          <div class="project-title-row"><h3>Canary Seismic Monitor</h3><span class="state">Finished</span></div>
-          <p class="project-copy">Automated seismic monitoring using official IGN earthquake data, historical storage, geographic classification and interactive analysis.</p>
-          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>Watchdog</span><span>Railway</span></div>
-          <div class="project-actions">
-            <a class="btn primary" href="https://canary-seismic-monitor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a>
-            <a class="btn" href="https://github.com/everyday-automated/canary-seismic-monitor-demo" target="_blank" rel="noopener noreferrer">Public Code ↗</a>
-            <button class="btn view-project" data-modal="canary-modal">View Project</button>
-          </div>
-        </article>
+      <div class="project-group">
+        <div class="project-group-head">
+          <h3>Local, travel & information products</h3>
+          <p>Products that organize places, events, local information and travel planning into something genuinely useful.</p>
+        </div>
+        <div class="projects-grid">
 
-        <article class="project-card">
-          <div class="project-preview" aria-label="Preview of the Canarias Tourism Pulse dashboard">
-            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">canarias-tourism-pulse-production.up.railway.app</span></div>
-            <div class="tourism-ui">
-              <img class="tourism-cover" src="assets/canarias-tourism-dashboard.svg" alt="Canarias Tourism Pulse dashboard with tourism KPIs and charts" />
-              <div class="preview-label">Tourism analytics</div>
-            </div>
-          </div>
-          <div class="project-category">Data Automation · Reporting Dashboard</div>
-          <div class="project-title-row"><h3>Canarias Tourism Pulse</h3><span class="state">Finished</span></div>
-          <p class="project-copy">Official ISTAC tourism data turned into an automatically refreshed dashboard and an exportable Excel reporting workflow.</p>
-          <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Railway</span></div>
-          <div class="project-actions">
-            <a class="btn primary" href="https://canarias-tourism-pulse-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a>
-            <a class="btn" href="https://drive.google.com/file/d/1_iy32lEjZE9oY2rUFI_xnerajH5SjZJL/view" target="_blank" rel="noopener noreferrer">Excel Report ↗</a>
-            <button class="btn view-project" data-modal="tourism-modal">View Project</button>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-preview compact">
-            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">Canarias Cerca · Explore</span></div>
-            <div class="mock-ui">
-              <div class="mock-top"><span>Map-first local discovery</span><span class="mock-pill">Canary Islands</span></div>
-              <div class="map-mock">
-                <div class="map-side"><div class="map-tile">Explore</div><div class="map-tile">Transport</div><div class="map-tile">Events</div><div class="map-tile">Live data</div></div>
-                <div class="map-canvas"><span class="island i1"></span><span class="island i2"></span><span class="island i3"></span><span class="island i4"></span><span class="map-pin p1"></span><span class="map-pin p2"></span></div>
+          <article class="project-card">
+            <div class="project-preview compact">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">Canarias Cerca · Explore</span></div>
+              <div class="mock-ui">
+                <div class="mock-top"><span>Map-first local discovery</span><span class="mock-pill">Canary Islands</span></div>
+                <div class="map-mock">
+                  <div class="map-side"><div class="map-tile">Explore</div><div class="map-tile">Transport</div><div class="map-tile">Events</div><div class="map-tile">Live data</div></div>
+                  <div class="map-canvas"><span class="island i1"></span><span class="island i2"></span><span class="island i3"></span><span class="island i4"></span><span class="map-pin p1"></span><span class="map-pin p2"></span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="project-category">Travel Product · Geospatial Platform</div>
-          <div class="project-title-row"><h3>Canarias Cerca</h3><span class="state active">Active development</span></div>
-          <p class="project-copy">A map-first product for discovering the Canary Islands through places, transport, events and useful local data without becoming another generic maps clone.</p>
-          <div class="stack"><span>JavaScript</span><span>FastAPI</span><span>PostGIS</span><span>MapLibre</span><span>Railway</span></div>
-          <div class="project-actions"><button class="btn view-project" data-modal="canarias-modal">View Project</button></div>
-        </article>
+            <div class="project-category">Travel Product · Geospatial Platform</div>
+            <div class="project-title-row"><h3>Canarias Cerca</h3><span class="state active">Active development</span></div>
+            <p class="project-copy">A map-first product for discovering the Canary Islands through places, transport, events and useful local data.</p>
+            <div class="stack"><span>JavaScript</span><span>FastAPI</span><span>PostGIS</span><span>MapLibre</span><span>Railway</span></div>
+            <div class="project-actions"><a class="btn primary" href="https://www.canariascerca.es" target="_blank" rel="noopener noreferrer">Website ↗</a><button class="btn view-project" data-modal="canarias-modal">View Project</button></div>
+          </article>
 
-        <article class="project-card">
-          <div class="project-preview compact">
-            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">AI Anki Language Assistant</span></div>
-            <div class="mock-ui">
-              <div class="mock-top"><span>Vocabulary · Grammar · Review</span><span class="mock-pill">Desktop</span></div>
-              <div class="mock-panel anki-card"><div class="anki-word">to come across</div><div class="anki-example">I came across an interesting expression while reading.</div><div class="anki-tools"><span>LLM review</span><span>STT</span><span>TTS</span><span>Dedup</span></div></div>
-            </div>
-          </div>
-          <div class="project-category">AI Product · Language Learning</div>
-          <div class="project-title-row"><h3>AI Anki Language Assistant</h3><span class="state active">Active development</span></div>
-          <p class="project-copy">A desktop language-learning app that generates reviewed Anki flashcards with multiple LLM providers, material import, grammar validation, STT/TTS and global deduplication.</p>
-          <div class="stack"><span>Python</span><span>LLM</span><span>STT/TTS</span><span>Anki</span><span>Desktop</span></div>
-          <div class="project-actions">
-            <a class="btn" href="https://github.com/paulinap92/ai-anki-language-assistant" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <button class="btn view-project" data-modal="anki-modal">View Project</button>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-preview compact">
-            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">RAG Language Agent · grounded conversation</span></div>
-            <div class="mock-ui">
-              <div class="mock-top"><span>Conversation tutor</span><span class="mock-pill">Sources on</span></div>
-              <div class="chat-mock">
-                <div class="bubble user">Can we practise expressions from my lesson about travel?</div>
-                <div class="bubble ai">Yes. I’ll keep the conversation grounded in your materials and reuse the expressions you’re learning.</div>
-                <div class="sources"><span>lesson_07.pdf</span><span>travel_notes.md</span><span>retrieval: 4 chunks</span></div>
+          <article class="project-card">
+            <div class="project-preview compact">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">La Gomera List</span></div>
+              <div class="gomera-ui">
+                <div class="mock-top"><span>Trip planning</span><span class="mock-pill">La Gomera</span></div>
+                <div class="gomera-list">
+                  <div class="gomera-item"><strong>Miradores</strong><span>views · sunsets</span></div>
+                  <div class="gomera-item"><strong>Routes</strong><span>hikes · drives</span></div>
+                  <div class="gomera-item"><strong>Villages</strong><span>local stops</span></div>
+                  <div class="gomera-item"><strong>Food</strong><span>cheese · miel · local products</span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="project-category">RAG · Conversational AI</div>
-          <div class="project-title-row"><h3>RAG Language Agent</h3><span class="state active">In development</span></div>
-          <p class="project-copy">A learning and conversation tutor grounded in the user’s own materials, combining retrieval with contextual feedback instead of relying on generic model knowledge alone.</p>
-          <div class="stack"><span>Python</span><span>FastAPI</span><span>LangGraph</span><span>RAG</span><span>Qdrant</span></div>
-          <div class="project-actions"><button class="btn view-project" data-modal="rag-modal">View Project</button></div>
-        </article>
+            <div class="project-category">Travel Planning · Personal Tool</div>
+            <div class="project-title-row"><h3>La Gomera List</h3><span class="state prototype">Experiment</span></div>
+            <p class="project-copy">A structured travel-planning tool for La Gomera: places, viewpoints, villages, beaches, routes, food and useful source links organized into one practical list.</p>
+            <div class="stack"><span>Travel data</span><span>Planning</span><span>Sources</span><span>Lists</span></div>
+            <div class="project-actions"><button class="btn view-project" data-modal="gomera-modal">View Project</button></div>
+          </article>
 
-        <article class="project-card">
-          <div class="project-preview compact">
-            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">AI Content Intelligence Engine</span></div>
-            <div class="mock-ui">
-              <div class="mock-top"><span>Source → structured content</span><span class="mock-pill">Human review</span></div>
-              <div class="pipeline"><div class="node">Crawl</div><div class="node">Classify</div><div class="node">Extract</div><div class="node">Draft ES/EN/PL</div><div class="node review">Review</div></div>
+          <article class="project-card">
+            <div class="project-preview compact">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">News VLC in Polish · editorial queue</span></div>
+              <div class="vlc-ui">
+                <div class="mock-top"><span>Local news publishing</span><span class="mock-pill">PL</span></div>
+                <div class="vlc-list">
+                  <div class="vlc-row"><span class="vlc-id">#70</span><span class="vlc-title">AEMET · Valencia weather</span><span class="vlc-status">published</span></div>
+                  <div class="vlc-row"><span class="vlc-id">#69</span><span class="vlc-title">Public housing update</span><span class="vlc-status">pending</span></div>
+                  <div class="vlc-row"><span class="vlc-id">#51</span><span class="vlc-title">Cercanías plan</span><span class="vlc-status">published</span></div>
+                  <div class="vlc-row"><span class="vlc-id">#45</span><span class="vlc-title">Culture & events</span><span class="vlc-status">published</span></div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="project-category">LLM Workflow · Content Intelligence</div>
-          <div class="project-title-row"><h3>AI Content Intelligence Engine</h3><span class="state active">In development</span></div>
-          <p class="project-copy">A reusable LangGraph pipeline for source ingestion, classification, metadata extraction and multilingual drafts with checkpoints and human approval before export.</p>
-          <div class="stack"><span>Python</span><span>LangGraph</span><span>LLM</span><span>HITL</span><span>Gemini</span></div>
-          <div class="project-actions"><button class="btn view-project" data-modal="content-modal">View Project</button></div>
-        </article>
+            <div class="project-category">Local News · Publishing Automation</div>
+            <div class="project-title-row"><h3>News VLC in Polish</h3><span class="state active">Active development</span></div>
+            <p class="project-copy">A Polish-language Valencia news workflow with article ingestion, editorial review, pending/published states and page publishing.</p>
+            <div class="stack"><span>Python</span><span>Django</span><span>Docker</span><span>Editorial workflow</span><span>Automation</span></div>
+            <div class="project-actions"><button class="btn view-project" data-modal="vlc-modal">View Project</button></div>
+          </article>
+        </div>
+      </div>
 
-        <article class="project-card">
-          <div class="project-preview compact">
-            <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">Stock & Sales Intelligence</span></div>
-            <div class="mock-ui">
-              <div class="mock-top"><span>Sales + stock analysis</span><span class="mock-pill">Excel workflow</span></div>
-              <div class="sales-kpis"><div class="sales-kpi"><span>Revenue</span><strong>€128k</strong></div><div class="sales-kpi"><span>Reorder</span><strong>18</strong></div><div class="sales-kpi"><span>Dead stock</span><strong>7</strong></div></div>
-              <div class="bars"><div class="bar" style="height:28%"></div><div class="bar hot" style="height:62%"></div><div class="bar" style="height:43%"></div><div class="bar hot" style="height:78%"></div><div class="bar" style="height:54%"></div><div class="bar" style="height:35%"></div></div>
+      <div class="project-group">
+        <div class="project-group-head">
+          <h3>AI & language systems</h3>
+          <p>LLM and RAG projects where the model is part of a controlled workflow rather than the whole product.</p>
+        </div>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-preview compact">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">AI Anki Language Assistant</span></div>
+              <div class="mock-ui">
+                <div class="mock-top"><span>Vocabulary · Grammar · Review</span><span class="mock-pill">Desktop</span></div>
+                <div class="mock-panel anki-card"><div class="anki-word">to come across</div><div class="anki-example">I came across an interesting expression while reading.</div><div class="anki-tools"><span>LLM review</span><span>STT</span><span>TTS</span><span>Dedup</span></div></div>
+              </div>
             </div>
-          </div>
-          <div class="project-category">Business Automation · Reporting</div>
-          <div class="project-title-row"><h3>Stock & Sales Intelligence</h3><span class="state prototype">Prototype</span></div>
-          <p class="project-copy">A business workflow that validates and combines sales and stock files, calculates KPIs, identifies reorder and dead-stock risk, and produces a ready-to-use Excel report.</p>
-          <div class="stack"><span>Python</span><span>Pandas</span><span>Excel</span><span>Google Drive</span><span>Reporting</span></div>
-          <div class="project-actions"><button class="btn view-project" data-modal="sales-modal">View Project</button></div>
-        </article>
+            <div class="project-category">AI Product · Language Learning</div>
+            <div class="project-title-row"><h3>AI Anki Language Assistant</h3><span class="state active">Active development</span></div>
+            <p class="project-copy">A desktop language-learning app for generating reviewed Anki flashcards from vocabulary, grammar and imported materials.</p>
+            <div class="stack"><span>Python</span><span>LLM</span><span>STT/TTS</span><span>Anki</span><span>Desktop</span></div>
+            <div class="project-actions"><a class="btn" href="https://github.com/paulinap92/ai-anki-language-assistant" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button class="btn view-project" data-modal="anki-modal">View Project</button></div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview compact">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">RAG Language Agent</span></div>
+              <div class="mock-ui">
+                <div class="mock-top"><span>Conversation tutor</span><span class="mock-pill">Sources on</span></div>
+                <div class="chat-mock"><div class="bubble user">Can we practise expressions from my lesson?</div><div class="bubble ai">Yes. I’ll keep the conversation grounded in your materials.</div><div class="sources"><span>lesson.pdf</span><span>notes.md</span><span>retrieval</span></div></div>
+              </div>
+            </div>
+            <div class="project-category">RAG · Conversational AI</div>
+            <div class="project-title-row"><h3>RAG Language Agent</h3><span class="state active">In development</span></div>
+            <p class="project-copy">A conversation and learning tutor grounded in the user’s own materials through retrieval and contextual feedback.</p>
+            <div class="stack"><span>Python</span><span>FastAPI</span><span>LangGraph</span><span>RAG</span><span>Qdrant</span></div>
+            <div class="project-actions"><button class="btn view-project" data-modal="rag-modal">View Project</button></div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview compact">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">AI Content Intelligence Engine</span></div>
+              <div class="mock-ui">
+                <div class="mock-top"><span>Source → structured content</span><span class="mock-pill">Human review</span></div>
+                <div class="pipeline"><div class="node">Crawl</div><div class="node">Classify</div><div class="node">Extract</div><div class="node">Draft</div><div class="node review">Review</div></div>
+              </div>
+            </div>
+            <div class="project-category">LLM Workflow · Content Intelligence</div>
+            <div class="project-title-row"><h3>AI Content Intelligence Engine</h3><span class="state active">In development</span></div>
+            <p class="project-copy">A LangGraph pipeline for source ingestion, classification, metadata extraction and multilingual drafts with human approval.</p>
+            <div class="stack"><span>Python</span><span>LangGraph</span><span>LLM</span><span>HITL</span><span>Gemini</span></div>
+            <div class="project-actions"><a class="btn" href="https://github.com/paulinap92/ai-content-ops-platform/tree/feature/database-social-studio" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button class="btn view-project" data-modal="content-modal">View Project</button></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <div class="project-group-head">
+          <h3>Data, monitoring & business automation</h3>
+          <p>Systems that collect, validate, monitor and turn raw data into useful decisions or reports.</p>
+        </div>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-preview" aria-label="Preview of Canary Seismic Monitor">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">canary-seismic-monitor-production.up.railway.app</span></div>
+              <div class="seismic-ui"><img class="seismic-cover" src="assets/canary-seismic-portfolio-cover.webp" alt="Canary seismic monitoring map" /><div class="preview-label">Seismic monitoring</div></div>
+            </div>
+            <div class="project-category">Data Automation · Interactive Dashboard</div>
+            <div class="project-title-row"><h3>Canary Seismic Monitor</h3><span class="state">Finished</span></div>
+            <p class="project-copy">Automated seismic monitoring using official IGN earthquake data, historical storage and interactive analysis.</p>
+            <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>Watchdog</span><span>Railway</span></div>
+            <div class="project-actions"><a class="btn primary" href="https://canary-seismic-monitor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a><a class="btn" href="https://github.com/everyday-automated/canary-seismic-monitor-demo" target="_blank" rel="noopener noreferrer">Public Code ↗</a><button class="btn view-project" data-modal="canary-modal">View Project</button></div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">canarias-tourism-pulse-production.up.railway.app</span></div>
+              <div class="tourism-ui"><img class="tourism-cover" src="assets/canarias-tourism-dashboard.svg" alt="Canarias Tourism Pulse dashboard" /><div class="preview-label">Tourism analytics</div></div>
+            </div>
+            <div class="project-category">Data Automation · Reporting Dashboard</div>
+            <div class="project-title-row"><h3>Canarias Tourism Pulse</h3><span class="state">Finished</span></div>
+            <p class="project-copy">Official ISTAC tourism data turned into an automatically refreshed dashboard and Excel reporting workflow.</p>
+            <div class="stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Railway</span></div>
+            <div class="project-actions"><a class="btn primary" href="https://canarias-tourism-pulse-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live Dashboard ↗</a><button class="btn view-project" data-modal="tourism-modal">View Project</button></div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview compact">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">Stock & Sales Intelligence</span></div>
+              <div class="mock-ui"><div class="mock-top"><span>Sales + stock analysis</span><span class="mock-pill">Excel workflow</span></div><div class="sales-kpis"><div class="sales-kpi"><span>Revenue</span><strong>€128k</strong></div><div class="sales-kpi"><span>Reorder</span><strong>18</strong></div><div class="sales-kpi"><span>Dead stock</span><strong>7</strong></div></div><div class="bars"><div class="bar" style="height:28%"></div><div class="bar hot" style="height:62%"></div><div class="bar" style="height:43%"></div><div class="bar hot" style="height:78%"></div></div></div>
+            </div>
+            <div class="project-category">Business Automation · Reporting</div>
+            <div class="project-title-row"><h3>Stock & Sales Intelligence</h3><span class="state prototype">Prototype</span></div>
+            <p class="project-copy">A workflow that validates sales and stock files, calculates KPIs and produces a ready-to-use Excel report.</p>
+            <div class="stack"><span>Python</span><span>Pandas</span><span>Excel</span><span>Google Drive</span><span>Reporting</span></div>
+            <div class="project-actions"><button class="btn view-project" data-modal="sales-modal">View Project</button></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <div class="project-group-head">
+          <h3>Personal tools & desktop automation</h3>
+          <p>Smaller tools built to remove repetitive work from everyday digital life.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-preview compact">
+              <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">Photo Organizer</span></div>
+              <div class="photo-ui">
+                <div class="mock-top"><span>Photo library</span><span class="mock-pill">Desktop</span></div>
+                <div class="photo-grid"><div class="photo-tile"></div><div class="photo-tile"></div><div class="photo-tile"></div><div class="photo-tile"></div><div class="photo-tile"></div><div class="photo-tile"></div></div>
+                <div class="photo-tools"><span>Detect events</span><span>Edit events</span><span>Copy library events</span></div>
+              </div>
+            </div>
+            <div class="project-category">Desktop Utility · Personal Automation</div>
+            <div class="project-title-row"><h3>Photo Organizer</h3><span class="state active">In development</span></div>
+            <p class="project-copy">A desktop tool for organizing a photo library into events, reviewing detected groups and copying selected library events instead of sorting folders by hand.</p>
+            <div class="stack"><span>Python</span><span>PyQt</span><span>Photo library</span><span>Events</span><span>Desktop</span></div>
+            <div class="project-actions"><button class="btn view-project" data-modal="photo-modal">View Project</button></div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -340,7 +415,7 @@
       <div><div class="label">Custom Automations</div><h2>Your workflow, automated.</h2></div>
       <div>
         <p>We choose the simplest useful architecture for the job — scripts, APIs, dashboards, AI, or a combination of them.</p>
-        <div class="tech"><span>Python</span><span>FastAPI</span><span>n8n</span><span>Power Automate</span><span>Dash</span><span>LLMs</span><span>RAG</span><span>MCP</span><span>APIs</span><span>Databricks</span></div>
+        <div class="tech"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>PostGIS</span><span>Dash</span><span>LLMs</span><span>RAG</span><span>LangGraph</span><span>APIs</span><span>Docker</span></div>
       </div>
     </div>
   </section>
@@ -482,6 +557,30 @@
     </div>
   </div>
 
+
+  <div class="modal" id="gomera-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="gomera-title">
+      <div class="modal-head"><div><div class="project-category">Experiment · Travel Planning · Personal Tool</div><h3 id="gomera-title">La Gomera List</h3></div><button class="close" data-close aria-label="Close">×</button></div>
+      <p class="project-copy">A structured planning list for a longer La Gomera trip, focused on nature, viewpoints, villages, beaches, hiking, food and routes by car.</p>
+      <div class="detail-grid"><div class="detail-block"><h4>Planning scope</h4><ul><li>Viewpoints and sunsets</li><li>Hiking routes and drives</li><li>Villages and beaches</li><li>Cheese, mieles and local products</li></ul></div><div class="detail-block"><h4>Useful base places</h4><p>San Sebastián de La Gomera, Valle Gran Rey, Hermigua and Agulo are used as practical planning anchors.</p></div></div>
+    </div>
+  </div>
+
+  <div class="modal" id="vlc-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="vlc-title">
+      <div class="modal-head"><div><div class="project-category">Active development · Local News · Publishing Automation</div><h3 id="vlc-title">News VLC in Polish</h3></div><button class="close" data-close aria-label="Close">×</button></div>
+      <p class="project-copy">A Polish-language local news system for Valencia with an editorial queue instead of blind automatic publishing.</p>
+      <div class="detail-grid"><div class="detail-block"><h4>Workflow</h4><ul><li>Incoming local news items</li><li>Pending and published states</li><li>Editorial review before publication</li><li>Page publishing and article tracking</li></ul></div><div class="detail-block"><h4>Implementation</h4><p>The current local stack uses a containerized Django backend and database-backed article workflow.</p></div></div>
+    </div>
+  </div>
+
+  <div class="modal" id="photo-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="photo-title">
+      <div class="modal-head"><div><div class="project-category">In development · Desktop Utility · Personal Automation</div><h3 id="photo-title">Photo Organizer</h3></div><button class="close" data-close aria-label="Close">×</button></div>
+      <p class="project-copy">A PyQt desktop application for turning a messy photo library into editable events and reusable groups.</p>
+      <div class="detail-grid"><div class="detail-block"><h4>Features</h4><ul><li>Organize photos into event proposals</li><li>Edit detected events</li><li>Copy selected library events</li><li>Desktop-first workflow for large local photo collections</li></ul></div><div class="detail-block"><h4>Goal</h4><p>Reduce repetitive manual sorting while keeping event grouping editable instead of making irreversible automatic decisions.</p></div></div>
+    </div>
+  </div>
 </main>
 
 <footer><div class="wrap footer"><span>© <span id="year"></span> Everyday Automated</span><span>Automation · Data · AI</span></div></footer>
