@@ -78,3 +78,19 @@ footer{padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 .project-icon-badge{position:absolute;right:12px;top:12px;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(9,13,20,.82);border:1px solid rgba(139,255,207,.28);color:var(--accent);backdrop-filter:blur(8px);box-shadow:0 8px 22px rgba(0,0,0,.22)}
 .project-icon-badge svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:680px){.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tab-btn{width:100%;padding:12px 10px;font-size:13px}.project-icon-badge{width:38px;height:38px}}
+
+.feature-screenshot{display:block;width:100%;height:325px;object-fit:cover;object-position:center}
+.screenshot-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.gomera-preview{position:absolute;inset:0;display:grid;grid-template-columns:42% 58%;background:linear-gradient(180deg,#101722,#0b1018)}
+.gomera-map{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;border-right:1px solid rgba(255,255,255,.07)}
+.gomera-map svg{width:92px;height:90px}
+.gomera-map svg path:first-child{fill:#253843;stroke:#72909b;stroke-width:2}
+.gomera-map svg .ridge{fill:none;stroke:#8bffcf;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+.gomera-map svg circle{fill:#8bffcf}
+.gomera-map span{margin-top:3px;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#d7e2e7}
+.gomera-list{display:grid;align-content:center;gap:7px;padding:13px 14px}
+.gomera-list div{padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.055)}
+.gomera-list div:last-child{border-bottom:0;padding-bottom:0}
+.gomera-list strong{display:block;font-size:9px;color:#eef3f5;margin-bottom:2px}
+.gomera-list span{display:block;font-size:7.5px;line-height:1.35;color:#8795a5}
+@media(max-width:680px){.feature-screenshot{height:250px}.gomera-map svg{width:82px;height:80px}}
