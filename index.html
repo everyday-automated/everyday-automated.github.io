@@ -63,6 +63,24 @@
     .note-foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:#9fa9b7}
     @media(max-width:1000px){.notes-grid{grid-template-columns:1fr}}
 
+  
+    /* FRONTIER + PRACTICAL */
+    .frontier-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .frontier-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:18px;display:flex;flex-direction:column;min-height:280px}
+    .frontier-card:hover{border-color:rgba(139,255,207,.28);transform:translateY(-1px)}
+    .frontier-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:800;margin-bottom:18px}
+    .frontier-date{font-size:10px;color:#748092;margin-left:8px}
+    .frontier-card h3{font-size:21px;line-height:1.12;letter-spacing:-.03em;margin:0 0 12px}
+    .frontier-card p{font-size:12.5px;line-height:1.58;color:var(--muted);margin:0 0 16px}
+    .frontier-link{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--accent);font-weight:800}
+    .practical-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+    .practical-card{border:1px solid var(--line);border-radius:14px;padding:17px;background:rgba(255,255,255,.018)}
+    .practical-card h3{font-size:17px;margin:0 0 8px;letter-spacing:-.02em}
+    .practical-card p{font-size:12px;color:var(--muted);line-height:1.55;margin:0}
+    .practical-card .mini-tag{display:inline-block;margin-bottom:10px;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#a9b4c2}
+    @media(max-width:1050px){.frontier-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:760px){.frontier-grid,.practical-grid{grid-template-columns:1fr}}
+
   </style>
 </head>
 <body>
@@ -128,34 +146,56 @@
 
 
 
+
   <section id="notes">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="label">Notes & updates</div><h2>Automation beyond the demo.</h2></div>
-        <p>Short notes on practical automation, AI systems, reliability and the things worth watching while I build.</p>
+        <div><div class="label">Frontier tech</div><h2>What’s happening next.</h2></div>
+        <p>AI, automation, robotics, quantum and emerging technology — filtered for what could actually change how we work and live.</p>
       </div>
 
-      <div class="notes-grid">
-        <article class="note-card">
-          <div class="note-meta">Automation landscape</div>
-          <h3>What actually changes when automation becomes agentic?</h3>
-          <p>Less interest in “AI that can click things”, more in permissions, guardrails, observability and knowing when a workflow should stay deterministic.</p>
-          <div class="note-foot">Topic I’m following · Agents · MCP · orchestration</div>
-        </article>
+      <div class="frontier-grid">
+        <a class="frontier-card" href="https://openai.com/news/product-releases/" target="_blank" rel="noopener noreferrer">
+          <div class="frontier-kicker">AI <span class="frontier-date">26 Oct 2026</span></div>
+          <h3>Frontier models keep moving from chat toward real work</h3>
+          <p>New model releases are increasingly focused on long-horizon tasks, software, research and tool use rather than simple question answering.</p>
+          <div class="frontier-link">Source: OpenAI ↗</div>
+        </a>
 
-        <article class="note-card">
-          <div class="note-meta">Build note</div>
-          <h3>RAG is useful when the model has something specific to stay grounded in.</h3>
-          <p>The interesting part is no longer just vector search. Retrieval quality, evaluation, source control and useful feedback matter much more once the demo is over.</p>
-          <div class="note-foot">From RAG Language Agent · retrieval · evaluation</div>
-        </article>
+        <a class="frontier-card" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Advances-Isaac-Platform-for-General-Purpose-Robotics-With-New-Reference-Humanoid-Frameworks-Simulation-Pipelines-and-Data/default.aspx" target="_blank" rel="noopener noreferrer">
+          <div class="frontier-kicker">Robotics <span class="frontier-date">21 Oct 2026</span></div>
+          <h3>NVIDIA expands Isaac for general-purpose and humanoid robotics</h3>
+          <p>New reference hardware, simulation pipelines and robot-learning tooling push robotics closer to reusable platforms instead of one-off systems.</p>
+          <div class="frontier-link">Source: NVIDIA ↗</div>
+        </a>
 
-        <article class="note-card">
-          <div class="note-meta">Industrial ML</div>
-          <h3>24/7 computer vision is a reliability problem, not only a model problem.</h3>
-          <p>Monitoring, bad inputs, drift, recovery and production edge cases often matter more than squeezing another point out of an offline benchmark.</p>
-          <div class="note-foot">Production CV · reliability · monitoring</div>
-        </article>
+        <a class="frontier-card" href="https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/" target="_blank" rel="noopener noreferrer">
+          <div class="frontier-kicker">Quantum <span class="frontier-date">15 Oct 2026</span></div>
+          <h3>Google reports a major step toward fault-tolerant quantum computing</h3>
+          <p>“Magic state cultivation” on the Willow processor reduced errors dramatically, attacking one of the costly bottlenecks in universal quantum computing.</p>
+          <div class="frontier-link">Source: Google Quantum AI ↗</div>
+        </a>
+
+        <a class="frontier-card" href="https://devblogs.microsoft.com/foundry/browser-automation-tool-ga/" target="_blank" rel="noopener noreferrer">
+          <div class="frontier-kicker">Automation <span class="frontier-date">19 Oct 2026</span></div>
+          <h3>Browser automation becomes a native tool for AI agents</h3>
+          <p>Microsoft made managed browser automation generally available in Foundry, letting agents navigate sites, complete forms and handle multi-step web workflows.</p>
+          <div class="frontier-link">Source: Microsoft ↗</div>
+        </a>
+      </div>
+
+      <div class="section-head" style="margin-top:54px;margin-bottom:20px">
+        <div><div class="label">Automate your work & life</div><h2>Useful before it becomes futuristic.</h2></div>
+        <p>Practical ideas for removing repetitive work, organizing information and getting technology to do more of the boring stuff.</p>
+      </div>
+
+      <div class="practical-grid">
+        <article class="practical-card"><span class="mini-tag">Work</span><h3>Automate recurring reports</h3><p>Collect data automatically, validate it, generate Excel or dashboards and send the result without rebuilding the same report every week.</p></article>
+        <article class="practical-card"><span class="mini-tag">Personal knowledge</span><h3>Turn your own files into a useful assistant</h3><p>Use RAG over notes, PDFs and documents so an AI assistant works from your material instead of answering generically.</p></article>
+        <article class="practical-card"><span class="mini-tag">Monitoring</span><h3>Stop checking things manually</h3><p>Track prices, availability, jobs, events, system health or incoming data and only get notified when something actually changes.</p></article>
+        <article class="practical-card"><span class="mini-tag">Learning</span><h3>Build a learning loop around AI</h3><p>Convert reading, vocabulary or courses into flashcards, practice prompts and review queues with human approval where it matters.</p></article>
+        <article class="practical-card"><span class="mini-tag">Files</span><h3>Make your folders work for you</h3><p>Automatically classify, rename, move, back up or extract information from documents and photos instead of doing digital housekeeping by hand.</p></article>
+        <article class="practical-card"><span class="mini-tag">Everyday life</span><h3>Create personal agents around real tasks</h3><p>Planning, reminders, travel research, household admin and repeated online tasks are becoming realistic places for small, controlled agents.</p></article>
       </div>
     </div>
   </section>
